@@ -3,14 +3,20 @@
             aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    @Html.ActionLink("Filmkölcsönző", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    @Html.ActionLink("TD", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
     <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/Filmek">Filmek</a>
+                <a class="nav-link" href="/Munkaim">Munkáim</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/Ugyfelek">Ügyfelek</a>
+                <a class="nav-link" href="/Rolam">Rólam</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Elerhetoseg">Elérhetőség</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Velemenyek">Vélemények</a>
             </li>
         </ul>
         @Html.Partial("_LoginPartial")
