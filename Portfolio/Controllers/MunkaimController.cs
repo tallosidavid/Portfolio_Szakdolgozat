@@ -1,17 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Portfolio.Models;
 
 namespace Portfolio.Controllers
 {
     public class MunkaimController : Controller
     {
+        readonly ApplicationDbContext _context;
+
+        public MunkaimController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
         // GET: Munkaim
         public ActionResult Index()
         {
-            return View();
+            var munkaim = _context.Munkaim.ToList();
+            return View(munkaim);
         }
 
         // GET: Munkaim/Details/5

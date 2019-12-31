@@ -1,0 +1,12 @@
+﻿@model Portfolio.Models.Munkaim
+
+<div class="card" style="margin:auto; margin-bottom:20px; width:500px; height:500px;" >
+    <video id="videoplayer" height="300" loop controls muted>
+        <source src="@Url.Content($"~/Content/Munkak/{Model.Cim}.mp4")" type="video/mp4" />
+    </video>
+    <div class="card-body">
+        <h5 class="card-title">@Model.Cim</h5>
+        <p class="card-text">@Model.Leiras</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>

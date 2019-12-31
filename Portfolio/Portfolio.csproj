@@ -179,6 +179,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912301704350_Ini.cs" />
+    <Compile Include="Migrations\201912301704350_Ini.Designer.cs">
+      <DependentUpon>201912301704350_Ini.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912301707083_populateMunkak.cs" />
+    <Compile Include="Migrations\201912301707083_populateMunkak.Designer.cs">
+      <DependentUpon>201912301707083_populateMunkak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -193,7 +202,23 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Video\test.mp4" />
+    <Content Include="Content\Munkak\Abstrakt Cube.mp4" />
+    <Content Include="Content\Munkak\Area Attack.mp4" />
+    <Content Include="Content\Munkak\Camp Fire.mp4" />
+    <Content Include="Content\Munkak\Curl Noise.mp4" />
+    <Content Include="Content\Munkak\Dragon Breath.mp4" />
+    <Content Include="Content\Munkak\Explosion.mp4" />
+    <Content Include="Content\Munkak\Fire Lake.mp4" />
+    <Content Include="Content\Munkak\Ground Collapse.mp4" />
+    <Content Include="Content\Munkak\House Destruction.mp4" />
+    <Content Include="Content\Munkak\Moon Destruction.mp4" />
+    <Content Include="Content\Munkak\Scifi Shield.mp4" />
+    <Content Include="Content\Munkak\Ship in Bottle.mp4" />
+    <Content Include="Content\Munkak\Skull Droplets.mp4" />
+    <Content Include="Content\Munkak\Superhero Landing.mp4" />
+    <Content Include="Content\Munkak\Thanos Portal.mp4" />
+    <Content Include="Content\Munkak\The First Meet.mp4" />
+    <Content Include="Content\Munkak\Waking Up.mp4" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -351,6 +376,7 @@
     <Content Include="Views\Rolam\Index.cshtml" />
     <Content Include="Views\Elerhetoseg\Index.cshtml" />
     <Content Include="Views\Velemenyek\Index.cshtml" />
+    <Content Include="Views\Shared\_VideoPlayer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -365,6 +391,14 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201912301704350_Ini.resx">
+      <DependentUpon>201912301704350_Ini.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912301707083_populateMunkak.resx">
+      <DependentUpon>201912301707083_populateMunkak.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
