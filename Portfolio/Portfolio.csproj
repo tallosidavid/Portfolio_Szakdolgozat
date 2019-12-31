@@ -170,12 +170,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ElerhetosegController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\MunkaimController.cs" />
-    <Compile Include="Controllers\RolamController.cs" />
-    <Compile Include="Controllers\VelemenyekController.cs" />
+    <Compile Include="Controllers\MyWorkController.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\FeedbackController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -202,23 +202,23 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Munkak\Abstrakt Cube.mp4" />
-    <Content Include="Content\Munkak\Area Attack.mp4" />
-    <Content Include="Content\Munkak\Camp Fire.mp4" />
-    <Content Include="Content\Munkak\Curl Noise.mp4" />
-    <Content Include="Content\Munkak\Dragon Breath.mp4" />
-    <Content Include="Content\Munkak\Explosion.mp4" />
-    <Content Include="Content\Munkak\Fire Lake.mp4" />
-    <Content Include="Content\Munkak\Ground Collapse.mp4" />
-    <Content Include="Content\Munkak\House Destruction.mp4" />
-    <Content Include="Content\Munkak\Moon Destruction.mp4" />
-    <Content Include="Content\Munkak\Scifi Shield.mp4" />
-    <Content Include="Content\Munkak\Ship in Bottle.mp4" />
-    <Content Include="Content\Munkak\Skull Droplets.mp4" />
-    <Content Include="Content\Munkak\Superhero Landing.mp4" />
-    <Content Include="Content\Munkak\Thanos Portal.mp4" />
-    <Content Include="Content\Munkak\The First Meet.mp4" />
-    <Content Include="Content\Munkak\Waking Up.mp4" />
+    <Content Include="Content\Works\Abstrakt Cube.mp4" />
+    <Content Include="Content\Works\Area Attack.mp4" />
+    <Content Include="Content\Works\Camp Fire.mp4" />
+    <Content Include="Content\Works\Curl Noise.mp4" />
+    <Content Include="Content\Works\Dragon Breath.mp4" />
+    <Content Include="Content\Works\Explosion.mp4" />
+    <Content Include="Content\Works\Fire Lake.mp4" />
+    <Content Include="Content\Works\Ground Collapse.mp4" />
+    <Content Include="Content\Works\House Destruction.mp4" />
+    <Content Include="Content\Works\Moon Destruction.mp4" />
+    <Content Include="Content\Works\Scifi Shield.mp4" />
+    <Content Include="Content\Works\Ship in Bottle.mp4" />
+    <Content Include="Content\Works\Skull Droplets.mp4" />
+    <Content Include="Content\Works\Superhero Landing.mp4" />
+    <Content Include="Content\Works\Thanos Portal.mp4" />
+    <Content Include="Content\Works\The First Meet.mp4" />
+    <Content Include="Content\Works\Waking Up.mp4" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -372,10 +372,10 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Shared\_Navbar.cshtml" />
-    <Content Include="Views\Munkaim\Index.cshtml" />
-    <Content Include="Views\Rolam\Index.cshtml" />
-    <Content Include="Views\Elerhetoseg\Index.cshtml" />
-    <Content Include="Views\Velemenyek\Index.cshtml" />
+    <Content Include="Views\MyWork\Index.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Feedback\Index.cshtml" />
     <Content Include="Views\Shared\_VideoPlayer.cshtml" />
   </ItemGroup>
   <ItemGroup>

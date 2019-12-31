@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace Portfolio.Controllers
 {
-    public class ElerhetosegController : Controller
+    public class AboutController : Controller
     {
-        // GET: Elerhetoseg
+        // GET: Rolam
         public ActionResult Index()
         {
             return View();

@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace Portfolio.Controllers
 {
-    public class RolamController : Controller
+    public class FeedbackController : Controller
     {
-        // GET: Rolam
+        // GET: Velemenyek
         public ActionResult Index()
         {
             return View();

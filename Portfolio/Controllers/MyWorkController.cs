@@ -8,11 +8,11 @@ using Portfolio.Models;
 
 namespace Portfolio.Controllers
 {
-    public class MunkaimController : Controller
+    public class MyWorkController : Controller
     {
         readonly ApplicationDbContext _context;
 
-        public MunkaimController()
+        public MyWorkController()
         {
             _context = new ApplicationDbContext();
         }
