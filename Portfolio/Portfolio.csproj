@@ -187,6 +187,10 @@
     <Compile Include="Migrations\201912301707083_populateMunkak.Designer.cs">
       <DependentUpon>201912301707083_populateMunkak.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912310910216_auth.cs" />
+    <Compile Include="Migrations\201912310910216_auth.Designer.cs">
+      <DependentUpon>201912310910216_auth.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -398,6 +402,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912301707083_populateMunkak.resx">
       <DependentUpon>201912301707083_populateMunkak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912310910216_auth.resx">
+      <DependentUpon>201912310910216_auth.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

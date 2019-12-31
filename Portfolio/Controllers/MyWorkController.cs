@@ -8,6 +8,7 @@ using Portfolio.Models;
 
 namespace Portfolio.Controllers
 {
+    [AllowAnonymous]
     public class MyWorkController : Controller
     {
         readonly ApplicationDbContext _context;

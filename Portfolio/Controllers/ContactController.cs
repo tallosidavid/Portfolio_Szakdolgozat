@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Portfolio.Controllers
 {
+    [AllowAnonymous]
     public class ContactController : Controller
     {
         // GET: Elerhetoseg
