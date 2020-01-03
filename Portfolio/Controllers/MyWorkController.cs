@@ -25,7 +25,6 @@ namespace Portfolio.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Save(Munkaim munkaim)
         { 
-
             if (!ModelState.IsValid)
             {
                 var vm = new WorkViewModel
@@ -70,7 +69,36 @@ namespace Portfolio.Controllers
         }
         public ActionResult New()
         {
-            return View("Edit");
+            return View("New");
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult NewSave(HttpPostedFileBase postedFile, Munkaim munkaim)
+        {
+        if (postedFile.ContentLength > 0)
+        {
+            string _FileName = Path.GetFileName(postedFile.FileName);
+            string _path = Path.Combine(Server.MapPath("~/Content/Works"), _FileName);
+            postedFile.SaveAs(_path);
+            munkaim.eleresiUt = _FileName;
+            if (!ModelState.IsValid)
+            {
+                var vm = new WorkViewModel
+                {
+                    Munkaim = munkaim
+                };
+                return View("New", vm);
+            }
+            _context.Munkaim.Add(munkaim);
+            _context.SaveChanges();
+            return RedirectToAction("Index", "MyWork");
+        }
+        return View("Index");
+            
+           
+
+        }
+             
         }
     }
-}
+ 

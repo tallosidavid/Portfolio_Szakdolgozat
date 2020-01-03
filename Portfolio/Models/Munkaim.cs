@@ -19,8 +19,7 @@ namespace Portfolio.Models
         public string Leiras { get; set; }
         [Display(Name = "Date")]
         public DateTime HozzaadasDatuma { get; set; }
-         
-        public string FileEleres { get; set; } 
+        public string eleresiUt { get; set; }
         
 
     }

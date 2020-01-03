@@ -198,6 +198,10 @@
     <Compile Include="Migrations\202001031153586_nullable.Designer.cs">
       <DependentUpon>202001031153586_nullable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001031637391_AddeleresiUt.cs" />
+    <Compile Include="Migrations\202001031637391_AddeleresiUt.Designer.cs">
+      <DependentUpon>202001031637391_AddeleresiUt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -390,6 +394,7 @@
     <Content Include="Views\Feedback\Index.cshtml" />
     <Content Include="Views\Shared\_VideoPlayer.cshtml" />
     <Content Include="Views\MyWork\Edit.cshtml" />
+    <Content Include="Views\MyWork\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -417,6 +422,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001031153586_nullable.resx">
       <DependentUpon>202001031153586_nullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001031637391_AddeleresiUt.resx">
+      <DependentUpon>202001031637391_AddeleresiUt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
