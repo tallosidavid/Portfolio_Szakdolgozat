@@ -3,7 +3,7 @@ namespace Portfolio.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Works : DbMigration
+    public partial class nullable : DbMigration
     {
         public override void Up()
         {

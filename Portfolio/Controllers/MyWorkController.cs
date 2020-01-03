@@ -9,7 +9,7 @@ using Portfolio.Models;
 
 namespace Portfolio.Controllers
 {
-    [AllowAnonymous]
+    [Authorize(Roles = "Admin")]
     public class MyWorkController : Controller
     {
         readonly ApplicationDbContext _context;
@@ -17,6 +17,7 @@ namespace Portfolio.Controllers
         public MyWorkController() => _context = new ApplicationDbContext();
 
         // GET: MyWork
+        [AllowAnonymous]
         public ActionResult Index()
         {
             var munkaim = _context.Munkaim.ToList();
@@ -25,7 +26,7 @@ namespace Portfolio.Controllers
 
        
 
-        [Authorize(Roles ="Admin")]
+         
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Save(Munkaim munkaim)
@@ -42,7 +43,7 @@ namespace Portfolio.Controllers
             }
 
 
-            if (munkaim.Id == 0)
+            if (munkaim.Id == null || munkaim.Id == 0)
             {
                 _context.Munkaim.Add(munkaim);
             }
@@ -59,7 +60,7 @@ namespace Portfolio.Controllers
             return RedirectToAction("Index", "MyWork");
         }
 
-        [Authorize(Roles = "Admin")]
+        
         public ActionResult Edit(int id)
         {
             var munka = _context.Munkaim.SingleOrDefault(u => u.Id == id);
@@ -69,6 +70,22 @@ namespace Portfolio.Controllers
                 Munkaim = munka
             };
             return View("Edit", vm);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var munka = _context.Munkaim.Find(id);
+            if (munka == null) return HttpNotFound();
+            _context.Munkaim.Remove(munka);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
+        public ActionResult New()
+        {
+            
+            return View("Edit");
         }
     }
 }

@@ -7,13 +7,13 @@ namespace Portfolio.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Works : IMigrationMetadata
+    public sealed partial class nullable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Works));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(nullable));
         
         string IMigrationMetadata.Id
         {
-            get { return "201912311558255_Works"; }
+            get { return "202001031153586_nullable"; }
         }
         
         string IMigrationMetadata.Source

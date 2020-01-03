@@ -8,7 +8,7 @@ namespace Portfolio.Models
 {
     public class Munkaim
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         [Display(Name = "Favorite")]
         public bool Csillagozott { get; set; }
         [Required(ErrorMessage ="You must give a name for your project")]

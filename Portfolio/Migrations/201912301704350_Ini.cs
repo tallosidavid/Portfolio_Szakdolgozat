@@ -11,10 +11,10 @@ namespace Portfolio.Migrations
                 "dbo.Munkaims",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Int(nullable: true, identity: true),
                         Csillagozott = c.Boolean(nullable: false),
-                        Cim = c.String(),
-                        Leiras = c.String(),
+                        Cim = c.String(nullable:false),
+                        Leiras = c.String(nullable:false),
                         HozzaadasDatuma = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);

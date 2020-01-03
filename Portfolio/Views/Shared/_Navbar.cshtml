@@ -18,6 +18,12 @@
             <li class="nav-item">
                 <a class="nav-link" href="/Feedback">Feedback</a>
             </li>
+            @if (User.IsInRole("Admin"))
+            {
+                <li class="nav-item">
+                    <a class="nav-link" href="/MyWork/New">New Work</a>
+                </li>
+            }
         </ul>
         @Html.Partial("_LoginPartial")
     </div>

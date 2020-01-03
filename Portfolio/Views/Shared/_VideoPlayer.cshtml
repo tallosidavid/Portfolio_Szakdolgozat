@@ -10,8 +10,8 @@
 
         @if (User.IsInRole("Admin"))
         {
-         <span>@Html.ActionLink("Edit", "Edit", "MyWork", new { id=Model.Id},new { @class = "btn btn-dark" })</span>
-         <span>@Html.ActionLink("Delete", "Delete", "MyWork", new { id = Model.Id }, new { @class = "btn btn-danger" })</span>
+         <span>@Html.ActionLink("Edit", "Edit", "MyWork", new { id = Model.Id }, new { @class = "btn btn-dark" })</span>
+         <span onclick="return confirm('Are you sure you want to delete this projekt?')">@Html.ActionLink("Delete", "Delete", "MyWork", new { id = Model.Id }, new { @class = "btn btn-danger" })</span>
 
     }
 

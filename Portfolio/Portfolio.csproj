@@ -194,9 +194,9 @@
     <Compile Include="Migrations\201912310910216_auth.Designer.cs">
       <DependentUpon>201912310910216_auth.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201912311558255_Works.cs" />
-    <Compile Include="Migrations\201912311558255_Works.Designer.cs">
-      <DependentUpon>201912311558255_Works.cs</DependentUpon>
+    <Compile Include="Migrations\202001031153586_nullable.cs" />
+    <Compile Include="Migrations\202001031153586_nullable.Designer.cs">
+      <DependentUpon>202001031153586_nullable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -415,8 +415,8 @@
     <EmbeddedResource Include="Migrations\201912310910216_auth.resx">
       <DependentUpon>201912310910216_auth.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912311558255_Works.resx">
-      <DependentUpon>201912311558255_Works.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001031153586_nullable.resx">
+      <DependentUpon>202001031153586_nullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
