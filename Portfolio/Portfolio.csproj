@@ -47,6 +47,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -191,11 +194,16 @@
     <Compile Include="Migrations\201912310910216_auth.Designer.cs">
       <DependentUpon>201912310910216_auth.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912311558255_Works.cs" />
+    <Compile Include="Migrations\201912311558255_Works.Designer.cs">
+      <DependentUpon>201912311558255_Works.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Munkaim.cs" />
+    <Compile Include="Models\WorkViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -381,6 +389,7 @@
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Feedback\Index.cshtml" />
     <Content Include="Views\Shared\_VideoPlayer.cshtml" />
+    <Content Include="Views\MyWork\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -405,6 +414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912310910216_auth.resx">
       <DependentUpon>201912310910216_auth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912311558255_Works.resx">
+      <DependentUpon>201912311558255_Works.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

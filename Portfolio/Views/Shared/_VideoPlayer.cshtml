@@ -10,8 +10,10 @@
 
         @if (User.IsInRole("Admin"))
         {
-            <a href="" class="btn btn-primary">Go somewhere</a>
-        }
+         <span>@Html.ActionLink("Edit", "Edit", "MyWork", new { id=Model.Id},new { @class = "btn btn-dark" })</span>
+         <span>@Html.ActionLink("Delete", "Delete", "MyWork", new { id = Model.Id }, new { @class = "btn btn-danger" })</span>
 
-    </div>
+    }
+
+</div>
 </div>

@@ -1,4 +1,5 @@
 ﻿using System;
+using AutoMapper;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -13,88 +14,61 @@ namespace Portfolio.Controllers
     {
         readonly ApplicationDbContext _context;
 
-        public MyWorkController()
-        {
-            _context = new ApplicationDbContext();
-        }
+        public MyWorkController() => _context = new ApplicationDbContext();
 
-        // GET: Munkaim
+        // GET: MyWork
         public ActionResult Index()
         {
             var munkaim = _context.Munkaim.ToList();
             return View(munkaim);
         }
 
-        // GET: Munkaim/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
+       
 
-        // GET: Munkaim/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Munkaim/Create
+        [Authorize(Roles ="Admin")]
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Save(Munkaim munkaim)
         {
-            try
-            {
-                // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
+            if (!ModelState.IsValid)
             {
-                return View();
+                var vm = new WorkViewModel
+                {
+                    Munkaim = munkaim
+                };
+
+                return View("Edit", vm);
             }
+
+
+            if (munkaim.Id == 0)
+            {
+                _context.Munkaim.Add(munkaim);
+            }
+            else
+            {
+                var letezoMunka = _context.Munkaim.Single(u => u.Id == munkaim.Id);
+                letezoMunka.Cim = munkaim.Cim;
+                letezoMunka.Csillagozott = munkaim.Csillagozott;
+                letezoMunka.HozzaadasDatuma = munkaim.HozzaadasDatuma;
+                letezoMunka.Leiras = munkaim.Leiras;
+            }
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "MyWork");
         }
 
-        // GET: Munkaim/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int id)
         {
-            return View();
-        }
-
-        // POST: Munkaim/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
+            var munka = _context.Munkaim.SingleOrDefault(u => u.Id == id);
+            if (munka == null) return HttpNotFound();
+            var vm = new WorkViewModel()
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Munkaim/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Munkaim/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+                Munkaim = munka
+            };
+            return View("Edit", vm);
         }
     }
 }
