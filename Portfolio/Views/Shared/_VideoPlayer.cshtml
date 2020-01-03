@@ -1,0 +1,19 @@
+﻿@model Portfolio.Models.Munkaim
+
+<div class="card" style="margin:auto; margin-bottom:20px; width:500px; height:500px;" >
+    <video id="videoplayer" height="300" loop controls muted>
+        <source src="@Url.Content($"~/Content/Works/{Model.Cim}.mp4")" type="video/mp4" />
+    </video>
+    <div class="card-body">
+        <h5 class="card-title">@Model.Cim</h5>
+        <p class="card-text">@Model.Leiras</p>
+
+        @if (User.IsInRole("Admin"))
+        {
+         <span>@Html.ActionLink("Edit", "Edit", "MyWork", new { id = Model.Id }, new { @class = "btn btn-dark" })</span>
+         <span onclick="return confirm('Are you sure you want to delete this projekt?')">@Html.ActionLink("Delete", "Delete", "MyWork", new { id = Model.Id }, new { @class = "btn btn-danger" })</span>
+
+    }
+
+</div>
+</div>

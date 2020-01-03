@@ -7,17 +7,23 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/Munkaim">Munkáim</a>
+                <a class="nav-link" href="/MyWork">My Works</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/Rolam">Rólam</a>
+                <a class="nav-link" href="/About">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/Elerhetoseg">Elérhetőség</a>
+                <a class="nav-link" href="/Contact">Contact</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/Velemenyek">Vélemények</a>
+                <a class="nav-link" href="/Feedback">Feedback</a>
             </li>
+            @if (User.IsInRole("Admin"))
+            {
+                <li class="nav-item">
+                    <a class="nav-link" href="/MyWork/New">New Work</a>
+                </li>
+            }
         </ul>
         @Html.Partial("_LoginPartial")
     </div>

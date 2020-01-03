@@ -20,7 +20,7 @@ namespace Portfolio.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        
+        public DbSet<Munkaim> Munkaim { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

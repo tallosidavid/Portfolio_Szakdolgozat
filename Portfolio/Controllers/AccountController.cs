@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Portfolio.Models;
@@ -136,7 +137,7 @@ namespace Portfolio.Controllers
 
         //
         // GET: /Account/Register
-        [AllowAnonymous]
+        [Authorize(Roles ="Admin")]
         public ActionResult Register()
         {
             return View();
@@ -145,7 +146,7 @@ namespace Portfolio.Controllers
         //
         // POST: /Account/Register
         [HttpPost]
-        [AllowAnonymous]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
@@ -155,6 +156,12 @@ namespace Portfolio.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+
+
+                    var rs = new RoleStore<IdentityRole>(new ApplicationDbContext());
+                    var rm = new RoleManager<IdentityRole>(rs);
+                    await rm.CreateAsync(new IdentityRole("Admin"));
+                    await UserManager.AddToRoleAsync(user.Id, "Admin");
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
