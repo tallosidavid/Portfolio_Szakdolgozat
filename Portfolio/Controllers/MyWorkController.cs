@@ -34,6 +34,7 @@ namespace Portfolio.Controllers
 
                 return View("Edit", vm);
             }
+
             if (munkaim.Id == null || munkaim.Id == 0)
             {
                 _context.Munkaim.Add(munkaim);

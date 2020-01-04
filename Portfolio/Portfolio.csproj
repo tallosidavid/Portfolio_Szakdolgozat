@@ -202,8 +202,14 @@
     <Compile Include="Migrations\202001031637391_AddeleresiUt.Designer.cs">
       <DependentUpon>202001031637391_AddeleresiUt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001041652241_CreateFeedbackTable.cs" />
+    <Compile Include="Migrations\202001041652241_CreateFeedbackTable.Designer.cs">
+      <DependentUpon>202001041652241_CreateFeedbackTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Feedback.cs" />
+    <Compile Include="Models\FeedbackViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Munkaim.cs" />
@@ -395,6 +401,7 @@
     <Content Include="Views\Shared\_VideoPlayer.cshtml" />
     <Content Include="Views\MyWork\Edit.cshtml" />
     <Content Include="Views\MyWork\New.cshtml" />
+    <Content Include="Views\Feedback\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -425,6 +432,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001031637391_AddeleresiUt.resx">
       <DependentUpon>202001031637391_AddeleresiUt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001041652241_CreateFeedbackTable.resx">
+      <DependentUpon>202001041652241_CreateFeedbackTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

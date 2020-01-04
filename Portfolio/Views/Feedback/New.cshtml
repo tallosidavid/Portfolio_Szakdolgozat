@@ -1,0 +1,26 @@
+﻿@model Portfolio.Models.FeedbackViewModel
+@{
+    ViewBag.Title = "New Feedback";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New</h2>
+
+@using (Html.BeginForm("Save", "Feedback", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <div class="form-group">
+        @Html.LabelFor(m=>m.Feedback.Nev)
+        @Html.TextBoxFor(m=>m.Feedback.Nev, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m=>m.Feedback.Nev)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m=>m.Feedback.Velemeny)
+        @Html.TextAreaFor(m=>m.Feedback.Velemeny, new { @class = "form-control", @rows = "5" })
+        @Html.ValidationMessageFor(m=>m.Feedback.Velemeny)
+    </div>
+    @Html.HiddenFor(m => m.Feedback.Id)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Send</button>
+}
