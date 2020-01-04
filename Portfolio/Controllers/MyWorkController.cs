@@ -18,7 +18,7 @@ namespace Portfolio.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
-            var munkaim = _context.Munkaim.ToList();
+            var munkaim = _context.Munkaim.ToList().OrderByDescending(s=> s.HozzaadasDatuma);
             return View(munkaim);
         }
         [HttpPost]

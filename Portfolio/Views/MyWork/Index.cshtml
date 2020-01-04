@@ -1,18 +1,18 @@
 ﻿@model IEnumerable<Portfolio.Models.Munkaim>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "MyWorks";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Munkáim</h2>
+ 
 <br />
  
 <div class="container-fluid">
-    <div class="row">
+     <div class="row">
         @foreach (var f in Model)
         {
             @Html.Partial("_VideoPlayer", f)
         }
-
-    </div>
+     
+     </div>
 </div>
