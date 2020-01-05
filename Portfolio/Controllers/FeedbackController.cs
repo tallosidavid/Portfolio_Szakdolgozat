@@ -37,10 +37,15 @@ namespace Portfolio.Controllers
 
             if (feedback.Id == null || feedback.Id == 0)
             {
-                _context.Feedback.Add(feedback);
+                if (feedback.Nev == "") feedback.Nev = "Anonymus";
+                feedback.Engedelyezett = false;
+                feedback.Lattamozott = false;
+               _context.Feedback.Add(feedback);
+                
             }
 
-            return View("New");
+            _context.SaveChanges();
+            return RedirectToAction("Index", "MyWork");
         }
     }
 }
