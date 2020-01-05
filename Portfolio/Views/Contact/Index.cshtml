@@ -1,8 +1,73 @@
-﻿
+﻿@model Portfolio.Models.EmailViewModel
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1 style="text-align:center">Feel free to contact Me!</h1>
+        </div>
+    </div>
+    <div class="row align-content-center" style="margin:auto;">
 
+        <div class="col-6" style="margin:auto">
+            <table>
+                <tr>
+                    <td style="font-weight:bold;">Phone </td>
+                    <td><a href="tel:+36-20-372-0903">+36 20 372 0903</a></td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;">E-mail </td>
+                    <td><a href="mailto:tallosi.david69@gmail.com">tallosi.david69@gmail.com</a></td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;">LinkedIn </td>
+                    <td><a href="https://www.linkedin.com/in/d%C3%A1vid-tall%C3%B3si-4a86a0168/">https://www.linkedin.com/in/d%C3%A1vid-tall%C3%B3si-4a86a0168/</a></td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;">Behance </td>
+                    <td><a href="https://www.behance.net/dvidtallsi">https://www.behance.net/dvidtallsi</a></td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;">Arthungry </td>
+                    <td><a href="https://arthungry.com/tallosi.david">https://arthungry.com/tallosi.david</a></td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;">GitHub </td>
+                    <td><a href="https://github.com/tallosidavid">https://github.com/tallosidavid</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-6">
+            <h3>Ask a question!</h3>
+            @using (Html.BeginForm("Save", "Email", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Email.Felado)
+                    @Html.TextBoxFor(m => m.Email.Felado, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Email.Felado)
+                 
+                    @Html.LabelFor(m => m.Email.EmailCim)
+                    @Html.TextBoxFor(m => m.Email.EmailCim, new { @class = "form-control",@type="email" })
+                    @Html.ValidationMessageFor(m => m.Email.EmailCim)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Email.Uzenet)
+                    @Html.TextAreaFor(m => m.Email.Uzenet, new { @class = "form-control", @rows = "5"})
+                    @Html.ValidationMessageFor(m => m.Email.Uzenet)
+                </div>
+                @Html.HiddenFor(m => m.Email.Id)
+                @Html.AntiForgeryToken()
+                <button type="submit" class="btn btn-primary">Save</button>
+            }
+            
+        </div>
+    </div>
+
+</div>
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

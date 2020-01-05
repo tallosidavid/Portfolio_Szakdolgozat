@@ -174,8 +174,11 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\EmailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ManageEmailsController.cs" />
+    <Compile Include="Controllers\ManageFeedbacksController.cs" />
     <Compile Include="Controllers\MyWorkController.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\FeedbackController.cs" />
@@ -206,8 +209,19 @@
     <Compile Include="Migrations\202001041652241_CreateFeedbackTable.Designer.cs">
       <DependentUpon>202001041652241_CreateFeedbackTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001051320520_FeedbackDate.cs" />
+    <Compile Include="Migrations\202001051320520_FeedbackDate.Designer.cs">
+      <DependentUpon>202001051320520_FeedbackDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001051450088_CreateEmailTable.cs" />
+    <Compile Include="Migrations\202001051450088_CreateEmailTable.Designer.cs">
+      <DependentUpon>202001051450088_CreateEmailTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\Email.cs" />
+    <Compile Include="Models\EmailViewModel.cs" />
     <Compile Include="Models\Feedback.cs" />
     <Compile Include="Models\FeedbackViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -224,6 +238,8 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Icons\email.png" />
+    <Content Include="Content\Icons\survey.png" />
     <Content Include="Content\Works\Abstrakt Cube.mp4" />
     <Content Include="Content\Works\Area Attack.mp4" />
     <Content Include="Content\Works\Camp Fire.mp4" />
@@ -398,13 +414,17 @@
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Feedback\Index.cshtml" />
-    <Content Include="Views\Shared\_VideoPlayer.cshtml" />
+    <Content Include="Views\MyWork\_VideoPlayer.cshtml" />
     <Content Include="Views\MyWork\Edit.cshtml" />
     <Content Include="Views\MyWork\New.cshtml" />
     <Content Include="Views\Feedback\New.cshtml" />
+    <Content Include="Views\Feedback\_Feedback.cshtml" />
+    <Content Include="Views\ManageFeedbacks\Index.cshtml" />
+    <Content Include="Views\ManageEmails\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Email\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -435,6 +455,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001041652241_CreateFeedbackTable.resx">
       <DependentUpon>202001041652241_CreateFeedbackTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001051320520_FeedbackDate.resx">
+      <DependentUpon>202001051320520_FeedbackDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001051450088_CreateEmailTable.resx">
+      <DependentUpon>202001051450088_CreateEmailTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -22,6 +22,7 @@ namespace Portfolio.Models
     {
         public DbSet<Munkaim> Munkaim { get; set; }
         public DbSet<Feedback> Feedback { get; set; }
+        public DbSet<Email> Email { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

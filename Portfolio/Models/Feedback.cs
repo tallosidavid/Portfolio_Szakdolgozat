@@ -16,6 +16,7 @@ namespace Portfolio.Models
         [Required(ErrorMessage = "Write your feedback about me!")]
         [Display(Name = "Feedback")]
         public string Velemeny { get; set; }
+        public DateTime HozzaadasDatuma { get; set; }
         public bool Engedelyezett { get; set; }
         public bool Lattamozott { get; set; } 
     }

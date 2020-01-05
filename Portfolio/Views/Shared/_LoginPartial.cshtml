@@ -6,11 +6,20 @@
     @Html.AntiForgeryToken()
 
     <ul class="nav navbar-nav navbar-right">
-        <li>
-            @Html.ActionLink("Hello Admin !", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class="nav-link" })
-        </li>
-        <li><a class="nav-link" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-    </ul>
+        @if (User.IsInRole("Admin"))
+        {
+            <li>
+                <a class="nav-link" href="/ManageEmails"><img src="@Url.Content($"~/Content/Icons/email.png")" style="width:24px"></a>
+            </li>
+            <li>
+                <a class="nav-link" href="/ManageFeedbacks"><img src="@Url.Content($"~/Content/Icons/survey.png")" style="width:24px"></a>
+            </li>
+        }
+            <li>
+                @Html.ActionLink($"Hi Admin!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link" })
+            </li>
+            <li><a class="nav-link" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+        </ul>
     }
 }
 else
