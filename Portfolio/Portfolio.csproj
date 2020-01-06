@@ -182,6 +182,7 @@
     <Compile Include="Controllers\MyWorkController.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\FeedbackController.cs" />
+    <Compile Include="Controllers\NotificationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -421,10 +422,12 @@
     <Content Include="Views\Feedback\_Feedback.cshtml" />
     <Content Include="Views\ManageFeedbacks\Index.cshtml" />
     <Content Include="Views\ManageEmails\Index.cshtml" />
+    <Content Include="Views\ManageFeedbacks\_ManageFeedbacks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Email\" />
+    <Folder Include="Views\Notification\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

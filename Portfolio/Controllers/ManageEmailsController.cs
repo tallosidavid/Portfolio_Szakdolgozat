@@ -11,6 +11,7 @@ namespace Portfolio.Controllers
         // GET: ManageEmails
         public ActionResult Index()
         {
+
             return View();
         }
     }

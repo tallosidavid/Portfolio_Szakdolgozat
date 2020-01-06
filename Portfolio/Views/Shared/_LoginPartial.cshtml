@@ -1,4 +1,5 @@
 ﻿@using Microsoft.AspNet.Identity
+@using Portfolio.Controllers
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
@@ -9,10 +10,11 @@
         @if (User.IsInRole("Admin"))
         {
             <li>
-                <a class="nav-link" href="/ManageEmails"><img src="@Url.Content($"~/Content/Icons/email.png")" style="width:24px"></a>
+                <a class="nav-link badge-notification" data-badge="@Html.Action("Email","Notification")" href="/ManageEmails"><img src="@Url.Content($"~/Content/Icons/email.png")" style="width:24px"></a>
             </li>
             <li>
-                <a class="nav-link" href="/ManageFeedbacks"><img src="@Url.Content($"~/Content/Icons/survey.png")" style="width:24px"></a>
+                <a class="nav-link badge-notification" data-badge="@Html.Action("Feedback","Notification")" href="/ManageFeedbacks"><img src="@Url.Content($"~/Content/Icons/survey.png")" style="width:24px"></a>
+
             </li>
         }
             <li>
@@ -29,3 +31,6 @@ else
         <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink",@class="nav-link" })</li>
     </ul>
 }
+
+
+ 

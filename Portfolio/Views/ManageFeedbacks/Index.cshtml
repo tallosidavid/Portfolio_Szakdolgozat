@@ -1,8 +1,16 @@
-﻿
+﻿@model IEnumerable<Portfolio.Models.Feedback>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Manage Feedbacks";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Manage feedbacks</h2>
 
+<div class="container-fluid">
+    <div class="row">
+        @foreach (var f in Model)
+        {
+            @Html.Partial("_ManageFeedbacks", f)
+        }
+    </div>
+</div>
