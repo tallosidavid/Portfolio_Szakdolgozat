@@ -7,10 +7,9 @@
 <h2>Manage feedbacks</h2>
 
 <div class="container-fluid">
-     
+    
         @foreach (var f in Model)
         {
-            @Html.Partial("_ManageEmails", f)
-        }
-     
+            @Html.Partial("_SeenEmails", f)
+        } 
 </div>
