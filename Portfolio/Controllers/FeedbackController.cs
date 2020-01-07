@@ -26,6 +26,7 @@ namespace Portfolio.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public ActionResult Save(Feedback feedback)
         {
             if (!ModelState.IsValid)

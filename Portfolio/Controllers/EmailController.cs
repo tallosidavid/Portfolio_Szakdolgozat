@@ -16,6 +16,7 @@ namespace Portfolio.Controllers
         {
             return View();
         }
+        [AllowAnonymous]
         public ActionResult Save(Email email)
         {
             if (!ModelState.IsValid)

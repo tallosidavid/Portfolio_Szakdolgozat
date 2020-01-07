@@ -99,7 +99,18 @@ namespace Portfolio.Controllers
            
 
         }
-             
+        [AllowAnonymous]
+        public ActionResult Videos()
+        {
+            var munkaim = _context.Munkaim.Where(s => s.eleresiUt.Contains("mp4")).ToList().OrderByDescending(s => s.HozzaadasDatuma).OrderByDescending(s => s.Csillagozott);
+            return View("index",munkaim);
         }
+        [AllowAnonymous]
+        public ActionResult Images()
+        {
+            var munkaim = _context.Munkaim.Where(s => s.eleresiUt.Contains("png") || s.eleresiUt.Contains("jpg")).ToList().OrderByDescending(s => s.HozzaadasDatuma).OrderByDescending(s => s.Csillagozott);
+            return View("index",munkaim);
+        }
+    }
     }
  
