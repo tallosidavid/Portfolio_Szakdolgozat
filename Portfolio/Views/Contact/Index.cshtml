@@ -3,16 +3,15 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <div class="container-fluid">
-    <div class="row">
+    <div class="row" style="margin-bottom:20px;">
         <div class="col-md-12">
-            <h1 style="text-align:center">Feel free to contact Me!</h1>
+            <h1 class="text-center">Feel free to contact Me!</h1>
+            <p class="text-center">Ide kell valami töltelék szöveg még hogy milyen királyvagyok hogy ennyi köcsög platformon eléhető vagyok</p>
         </div>
     </div>
-    <div class="row align-content-center" style="margin:auto;">
-
-        <div class="col-md-6" style="margin:auto">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto" style="margin-top:100px;margin-bottom:100px;">
             <table>
                 <tr>
                     <td style="font-weight:bold;">Phone </td>
@@ -40,35 +39,33 @@
                 </tr>
             </table>
         </div>
-        <div class="col-md-6">
-            <h3 style="margin-left:150px">Ask a question!</h3>
-            @using (Html.BeginForm("Save", "Email", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        <div class="col-md-auto">
+            <h3 class="text-center">Ask a question!</h3>
+            @using (Html.BeginForm("Save", "Email", FormMethod.Post))
             {
-                <div class="input-group" >
-                    <div class="form-group" style="margin-right:30px">
+                <div class="form-row">
+                    <div class="col-5">
                         @Html.LabelFor(m => m.Email.Felado)
-                        @Html.TextBoxFor(m => m.Email.Felado, new { @class = "form-control" })
+                        @Html.TextBoxFor(m => m.Email.Felado, new { @class = "form-control", @style = "width:100%;" })
                         @Html.ValidationMessageFor(m => m.Email.Felado)
                     </div>
-                    <div class="form-group">
+                    <div class="col-7">
                         @Html.LabelFor(m => m.Email.EmailCim)
-                        @Html.TextBoxFor(m => m.Email.EmailCim, new { @class = "form-control", @type = "email" })
+                        @Html.TextBoxFor(m => m.Email.EmailCim, new { @class = "form-control", @type = "email", @style = "width:100%;" })
                         @Html.ValidationMessageFor(m => m.Email.EmailCim)
                     </div>
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(m => m.Email.Uzenet)
-                    @Html.TextAreaFor(m => m.Email.Uzenet, new { @class = "form-control", @rows = "5" ,@style="min-width:62%"})
+                    @Html.TextAreaFor(m => m.Email.Uzenet, new { @class = "form-control", @rows = "5", @style = "width:100%;" })
                     @Html.ValidationMessageFor(m => m.Email.Uzenet)
                 </div>
                 @Html.HiddenFor(m => m.Email.Id)
                 @Html.AntiForgeryToken()
-                <button type="submit" class="btn btn-dark" style="min-width:62%;">Send</button>
+                <button type="submit" class="btn btn-dark" style="width:100%;">Send</button>
             }
-         
         </div>
     </div>
-
 </div>
 @section scripts
 {

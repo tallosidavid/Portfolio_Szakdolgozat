@@ -47,9 +47,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -245,19 +242,33 @@
     <Content Include="Content\Works\Abstrakt Cube.mp4" />
     <Content Include="Content\Works\Area Attack.mp4" />
     <Content Include="Content\Works\Camp Fire.mp4" />
+    <Content Include="Content\Works\Cohaire Arms.png" />
     <Content Include="Content\Works\Curl Noise.mp4" />
     <Content Include="Content\Works\Dragon Breath.mp4" />
+    <Content Include="Content\Works\DTA Stealth Sniper.png" />
     <Content Include="Content\Works\Explosion.mp4" />
     <Content Include="Content\Works\Fire Lake.mp4" />
+    <Content Include="Content\Works\Front_FULL_Body.png" />
+    <Content Include="Content\Works\glock26.png" />
     <Content Include="Content\Works\Ground Collapse.mp4" />
+    <Content Include="Content\Works\HK416D.png" />
+    <Content Include="Content\Works\Hotel_DONE_Light.png" />
     <Content Include="Content\Works\House Destruction.mp4" />
+    <Content Include="Content\Works\IWI Tavor.png" />
+    <Content Include="Content\Works\Kel_Tec.png" />
     <Content Include="Content\Works\Moon Destruction.mp4" />
+    <Content Include="Content\Works\MP5.png" />
+    <Content Include="Content\Works\right.png" />
+    <Content Include="Content\Works\Run_00017.png" />
     <Content Include="Content\Works\Scifi Shield.mp4" />
+    <Content Include="Content\Works\SharkPool.png" />
     <Content Include="Content\Works\Ship in Bottle.mp4" />
     <Content Include="Content\Works\Skull Droplets.mp4" />
     <Content Include="Content\Works\Superhero Landing.mp4" />
+    <Content Include="Content\Works\Taran Tactical.png" />
     <Content Include="Content\Works\Thanos Portal.mp4" />
     <Content Include="Content\Works\The First Meet.mp4" />
+    <Content Include="Content\Works\tl_jw.png" />
     <Content Include="Content\Works\Waking Up.mp4" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -295,6 +306,8 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\less-1.5.1.js" />
+    <Content Include="Scripts\less-1.5.1.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
