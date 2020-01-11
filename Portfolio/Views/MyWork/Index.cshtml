@@ -3,13 +3,20 @@
     ViewBag.Title = "MyWorks";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<link rel="stylesheet" type="text/css" href="~/Content/StandingImage.css" />
+
+<link rel="stylesheet" type="text/css" href="~/Content/16_9.css" />
 <br />
 <div class="container-fluid">
-    <div class="col-md-12"> 
-    @foreach (var f in Model)
-    {
-        @Html.Partial("_VideoPlayer", f)
-
-    } 
+    <div class="row">
+        @foreach (var f in Model)
+        {@Html.Partial("_VideoPlayer", f)}
+    </div>
 </div>
-</div> 
+<style>
+    .wrapper { 
+        background: center no-repeat;
+        background-size: 100% 100% 
+    }
+</style>
