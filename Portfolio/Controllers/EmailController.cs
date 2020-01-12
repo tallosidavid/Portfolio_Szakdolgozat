@@ -36,7 +36,7 @@ namespace Portfolio.Controllers
 
             }
             _context.SaveChanges();
-            return RedirectToAction("Index", "Contact");
+            return RedirectToAction("Index","Contact");
         }
     }
 }

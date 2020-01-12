@@ -11,62 +11,68 @@
         </div>
     </div>
     <div class="row justify-content-md-center">
-        <div class="col-md-auto" style="margin-top:100px;margin-bottom:100px;">
-            <table>
-                <tr>
-                    <td style="font-weight:bold;">Phone </td>
-                    <td><a href="tel:+36-20-372-0903">+36 20 372 0903</a></td>
-                </tr>
-                <tr>
-                    <td style="font-weight:bold;">E-mail </td>
-                    <td><a href="mailto:tallosi.david69@gmail.com">tallosi.david69@gmail.com</a></td>
-                </tr>
-                <tr>
-                    <td style="font-weight:bold;">LinkedIn </td>
-                    <td><a href="https://www.linkedin.com/in/d%C3%A1vid-tall%C3%B3si-4a86a0168/">https://www.linkedin.com/in/d%C3%A1vid-tall%C3%B3si-4a86a0168/</a></td>
-                </tr>
-                <tr>
-                    <td style="font-weight:bold;">Behance </td>
-                    <td><a href="https://www.behance.net/dvidtallsi">https://www.behance.net/dvidtallsi</a></td>
-                </tr>
-                <tr>
-                    <td style="font-weight:bold;">Arthungry </td>
-                    <td><a href="https://arthungry.com/tallosi.david">https://arthungry.com/tallosi.david</a></td>
-                </tr>
-                <tr>
-                    <td style="font-weight:bold;">GitHub </td>
-                    <td><a href="https://github.com/tallosidavid">https://github.com/tallosidavid</a></td>
-                </tr>
-            </table>
+        <div class="col-md-auto" style="top:150px;">
+            <div class="phone">
+                <img src="~/Content/Icons/Phone_Logo.png" width="30" />
+                <a class="phoneLink" href="tel:+36-20-372-0903">+36 20 372 0903</a>
+            </div>
+            <div class="email">
+                <img src="~/Content/Icons/Gmail_Logo.png" width="32" style="margin-top:4px;" />
+                <a class="emailLink" href="mailto:tallosi.david69@gmail.com" style="margin-top:4px;">tallosi.david69@gmail.com</a>
+            </div>
+            <div class="linkedin">
+                <img src="~/Content/Icons/LinkedIn_Logo.png" width="32" />
+                <a class="linkedinLink" href="https://www.linkedin.com/in/d%C3%A1vid-tall%C3%B3si-4a86a0168/">LinkedIn</a>
+            </div>
+            <div class="behance">
+                <img src="~/Content/Icons/Behance_Logo.png" width="32" />
+                <a class="behanceLink" href="https://www.behance.net/dvidtallsi">Behance</a>
+            </div>
+            <div class="github">
+                <img src="~/Content/Icons/GitHub_Logo.png" width="32" />
+                <a class="githubLink" href="https://github.com/tallosidavid">GitHub</a>
+            </div>
+            <div class="arthungry">
+                <img src="~/Content/Icons/Arthungry_Logo.png" width="32" />
+                <a class="arthungryLink" href="https://arthungry.com/tallosi.david">Arthungry</a>
+            </div>
         </div>
         <div class="col-md-auto">
-            <h3 class="text-center">Ask a question!</h3>
-            @using (Html.BeginForm("Save", "Email", FormMethod.Post))
-            {
-                <div class="form-row">
-                    <div class="col-5">
-                        @Html.LabelFor(m => m.Email.Felado)
-                        @Html.TextBoxFor(m => m.Email.Felado, new { @class = "form-control", @style = "width:100%;" })
-                        @Html.ValidationMessageFor(m => m.Email.Felado)
-                    </div>
-                    <div class="col-7">
-                        @Html.LabelFor(m => m.Email.EmailCim)
-                        @Html.TextBoxFor(m => m.Email.EmailCim, new { @class = "form-control", @type = "email", @style = "width:100%;" })
-                        @Html.ValidationMessageFor(m => m.Email.EmailCim)
-                    </div>
+            <div class="card" style="right:15px; min-height:450px;">
+                <h5 class="card-header contact-header text-center py-4" style="margin-bottom:10px;">
+                    <strong>Ask a question!</strong>
+                </h5>
+                <div class="card-body px-md-4">
+                    @using (Html.BeginForm("Save", "Email", FormMethod.Post))
+                    {
+                        <div class="form-row">
+                            <div class="col-5">
+                                @Html.LabelFor(m => m.Email.Felado)
+                                @Html.TextBoxFor(m => m.Email.Felado, new { @class = "form-control", @style = "width:100%;",@required="True" })
+                                @Html.ValidationMessageFor(m => m.Email.Felado)
+                            </div>
+                            <div class="col-7">
+                                @Html.LabelFor(m => m.Email.EmailCim)
+                                @Html.TextBoxFor(m => m.Email.EmailCim, new { @class = "form-control", @type = "email", @style = "width:100%;" })
+                                @Html.ValidationMessageFor(m => m.Email.EmailCim)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Email.Uzenet)
+                            @Html.TextAreaFor(m => m.Email.Uzenet, new { @class = "form-control", @rows = "5", @style = "width:100%;" })
+                            @Html.ValidationMessageFor(m => m.Email.Uzenet)
+                        </div>
+                        @Html.HiddenFor(m => m.Email.Id)
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn_contact"><span>Send!</span></button>
+                    }
                 </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Email.Uzenet)
-                    @Html.TextAreaFor(m => m.Email.Uzenet, new { @class = "form-control", @rows = "5", @style = "width:100%;" })
-                    @Html.ValidationMessageFor(m => m.Email.Uzenet)
-                </div>
-                @Html.HiddenFor(m => m.Email.Id)
-                @Html.AntiForgeryToken()
-                <button type="submit" class="btn btn-dark" style="width:100%;">Send</button>
-            }
+
+            </div>
         </div>
     </div>
 </div>
+
 @section scripts
 {
     @Scripts.Render("~/bundles/jqueryval")

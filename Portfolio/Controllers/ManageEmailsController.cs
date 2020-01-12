@@ -24,7 +24,7 @@ namespace Portfolio.Controllers
             if (email == null) return HttpNotFound();
             email.Lattamozott = true;
             _context.SaveChanges();
-            return RedirectToAction("Index", "ManageFeedbacks");
+            return RedirectToAction("Index", "ManageEmails");
         }
         public ActionResult Delete(int id)
         {

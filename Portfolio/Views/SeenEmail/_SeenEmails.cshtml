@@ -3,9 +3,9 @@
 
 @if (Model.Lattamozott)
 {
-    <div class="row">
-        <div class="card" style="width:auto;height:auto;margin-top:20px;">
-            <div class="card-header" style="font-weight:bold;font-style:italic;">
+    <div class="col-md-auto">
+        <div class="card" style="height:auto;margin-top:20px;">
+            <div class="card-header" style="font-weight:bold;font-style:italic;background: linear-gradient(to right, #0ABF04, #0BD904);">
                 @Model.Felado-(@Model.EmailCim)
             </div>
             <div class="card-body">
@@ -14,11 +14,11 @@
                     <footer class="blockquote-footer">@Model.Idopont.ToShortDateString() </footer>
                     @if (User.IsInRole("Admin"))
                     {
-                        <span onclick="return confirm('Are you sure you want to delete this email?')" style="float:right;margin-left:10px;">@Html.ActionLink("Delete", "Delete", "SeenEmail", new { id = Model.Id }, new { @class = "btn btn-danger" })</span>
-
+                        <span onclick="return confirm('Are you sure you want to delete this email?')" style="float:right;margin-left:10px;">@Html.ActionLink("Delete", "Delete", "SeenEmails", new { id = Model.Id }, new { @class = "btn btn-danger" })</span>
+                        
                     }
                 </blockquote>
             </div>
         </div>
-        </div>
+    </div> 
         }
