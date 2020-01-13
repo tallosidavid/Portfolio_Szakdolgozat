@@ -246,6 +246,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Icons\email.png" />
     <Content Include="Content\Icons\survey.png" />
+    <Content Include="Content\video_player.css" />
     <Content Include="Content\Works\Abstrakt Cube.mp4" />
     <Content Include="Content\Works\Area Attack.mp4" />
     <Content Include="Content\Works\Camp Fire.mp4" />

@@ -225,5 +225,25 @@ span.badge-notification {
         -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
         transform: translateX(-9%) translateY(-25%) rotate(45deg);
     }
- 
 
+.field-validation-error{
+    color:red;
+    font-weight:bold;
+}
+.card_video {
+    margin: auto;
+    margin-bottom: 20px;
+    width: auto;
+    height: auto;
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
