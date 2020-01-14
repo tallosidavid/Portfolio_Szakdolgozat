@@ -17,13 +17,13 @@ namespace Portfolio.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
-            var munkaim = _context.Munkaim.ToList().OrderByDescending(s=> s.HozzaadasDatuma).OrderByDescending(s => s.Csillagozott);
+            var munkaim = _context.Munkaim.ToList().OrderByDescending(s => s.HozzaadasDatuma).OrderByDescending(s => s.Csillagozott);
             return View(munkaim);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Save(Munkaim munkaim)
-        { 
+        {
             if (!ModelState.IsValid)
             {
                 var vm = new WorkViewModel
@@ -44,6 +44,7 @@ namespace Portfolio.Controllers
                 letezoMunka.Cim = munkaim.Cim;
                 letezoMunka.Csillagozott = munkaim.Csillagozott;
                 letezoMunka.HozzaadasDatuma = munkaim.HozzaadasDatuma;
+                letezoMunka.SlideShow = munkaim.SlideShow;
                 letezoMunka.Leiras = munkaim.Leiras;
             }
             _context.SaveChanges();
@@ -75,41 +76,41 @@ namespace Portfolio.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult NewSave(HttpPostedFileBase postedFile, Munkaim munkaim)
         {
-        if (postedFile.ContentLength > 0)
-        {
-            string _FileName = Path.GetFileName(postedFile.FileName);
-            string _path = Path.Combine(Server.MapPath("~/Content/Works"), _FileName);
-            postedFile.SaveAs(_path);
-            munkaim.eleresiUt = _FileName;
-            if (!ModelState.IsValid)
+            if (postedFile.ContentLength > 0)
             {
-                var vm = new WorkViewModel
+                string _FileName = Path.GetFileName(postedFile.FileName);
+                string _path = Path.Combine(Server.MapPath("~/Content/Works"), _FileName);
+                postedFile.SaveAs(_path);
+                munkaim.eleresiUt = _FileName;
+                if (!ModelState.IsValid)
                 {
-                    Munkaim = munkaim
-                };
-                return View("New", vm);
+                    var vm = new WorkViewModel
+                    {
+                        Munkaim = munkaim
+                    };
+                    return View("New", vm);
+                }
+                _context.Munkaim.Add(munkaim);
+                _context.SaveChanges();
+                return RedirectToAction("Index", "MyWork");
             }
-            _context.Munkaim.Add(munkaim);
-            _context.SaveChanges();
-            return RedirectToAction("Index", "MyWork");
-        }
-        return View("Index");
-            
-           
+            return View("Index");
+
+
 
         }
         [AllowAnonymous]
         public ActionResult Videos()
         {
             var munkaim = _context.Munkaim.Where(s => s.eleresiUt.Contains("mp4")).ToList().OrderByDescending(s => s.HozzaadasDatuma).OrderByDescending(s => s.Csillagozott);
-            return View("index",munkaim);
+            return View("index", munkaim);
         }
         [AllowAnonymous]
         public ActionResult Images()
         {
             var munkaim = _context.Munkaim.Where(s => s.eleresiUt.Contains("png") || s.eleresiUt.Contains("jpg")).ToList().OrderByDescending(s => s.HozzaadasDatuma).OrderByDescending(s => s.Csillagozott);
-            return View("index",munkaim);
+            return View("index", munkaim);
         }
     }
-    }
- 
+}
+

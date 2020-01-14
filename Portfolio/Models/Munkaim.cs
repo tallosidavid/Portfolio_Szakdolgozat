@@ -19,6 +19,8 @@ namespace Portfolio.Models
         public string Leiras { get; set; }
         [Display(Name = "Date")]
         public DateTime HozzaadasDatuma { get; set; }
+        [Display(Name = "Show Index page")]
+        public bool SlideShow { get; set; }
         public string eleresiUt { get; set; }
         
 

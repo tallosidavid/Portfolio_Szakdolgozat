@@ -16,6 +16,7 @@ namespace Portfolio.Migrations
                         Cim = c.String(nullable:false),
                         Leiras = c.String(nullable:false),
                         HozzaadasDatuma = c.DateTime(nullable: false),
+
                     })
                 .PrimaryKey(t => t.Id);
             

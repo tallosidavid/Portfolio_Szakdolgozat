@@ -8,8 +8,69 @@
 
 <div class="col-md-12">
 
-   
-    <!--Carousel Wrapper-->
+
+    <div id="video-carousel-example" class="carousel slide carousel-fade" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#video-carousel-example" data-slide-to="0" class="active"></li>
+            <li data-target="#video-carousel-example" data-slide-to="1"></li>
+            <li data-target="#video-carousel-example" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            @{
+                int Counter = 1;
+                string Active = " active";
+                string Unactive = "";
+                int IDCounter = 1;
+            }
+
+            @foreach (var f in Model.Munkaims)
+            {
+                string decide = (Counter == 1) ? Active : Unactive;
+                if (f.SlideShow)
+                {
+                    <div class="carousel-item @decide" name="@Counter">
+                        <video id="@Counter" class="video-fluid" name="videoPlayerMain" muted onended="Switch()">
+                            <source src="@Url.Content($"~/Content/Works/{f.eleresiUt}")" type="video/mp4" />
+                        </video>
+                    </div>
+
+                    Counter++;
+                }
+            }
+            <a class="carousel-control-prev" href="#video-carousel-example" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#video-carousel-example" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+            setInterval(Mainvideoplayer, 1000);
+            function Mainvideoplayer() {
+                var osztaly = document.getElementsByName("@Counter")[0].getAttribute("class");
+                if (osztaly == @Active) {
+                    document.getElementById("@Counter").play();
+
+                }
+                else {
+                    document.getElementById("@Counter").play();
+                }
+            }
+        });
+
+        function Switch() {
+            $("carousel-control-next-icon").click();
+        }
+    </script>
+
+
+
     @* Timeline *@
     <section class="timeline">
         <ul>
@@ -66,7 +127,33 @@
         </ul>
     </section>
 
+    <script>
+        /* Check the location of each element */
+        $('.content').each(function (i) {
 
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).height();
+
+            if (bottom_of_object > bottom_of_window) {
+                $(this).addClass('hidden');
+            }
+        });
+
+
+        $(window).scroll(function () {
+            /* Check the location of each element hidden */
+            $('.hidden').each(function (i) {
+
+                var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+                var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+                /* If the object is completely visible in the window, fadeIn it */
+                if (bottom_of_window > bottom_of_object) {
+                    $(this).animate({ 'opacity': '1' }, 700);
+                }
+            });
+        });
+    </script>
 
     @* Feedbacks *@
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="margin:auto;margin-top:20px; width:1000px;">
@@ -107,30 +194,3 @@
 
 </div>
 
-<script>
-    /* Check the location of each element */
-    $('.content').each(function (i) {
-
-        var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-        var bottom_of_window = $(window).height();
-
-        if (bottom_of_object > bottom_of_window) {
-            $(this).addClass('hidden');
-        }
-    });
-
-
-    $(window).scroll(function () {
-        /* Check the location of each element hidden */
-        $('.hidden').each(function (i) {
-
-            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-            var bottom_of_window = $(window).scrollTop() + $(window).height();
-
-            /* If the object is completely visible in the window, fadeIn it */
-            if (bottom_of_window > bottom_of_object) {
-                $(this).animate({ 'opacity': '1' }, 700);
-            }
-        });
-    });
-</script>

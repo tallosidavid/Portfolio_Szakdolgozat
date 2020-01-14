@@ -216,6 +216,10 @@
     <Compile Include="Migrations\202001051450088_CreateEmailTable.Designer.cs">
       <DependentUpon>202001051450088_CreateEmailTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001141658387_SlideShowOption.cs" />
+    <Compile Include="Migrations\202001141658387_SlideShowOption.Designer.cs">
+      <DependentUpon>202001141658387_SlideShowOption.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Contact.cs" />
@@ -477,6 +481,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001051450088_CreateEmailTable.resx">
       <DependentUpon>202001051450088_CreateEmailTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001141658387_SlideShowOption.resx">
+      <DependentUpon>202001141658387_SlideShowOption.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

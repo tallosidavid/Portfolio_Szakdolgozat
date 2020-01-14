@@ -22,29 +22,13 @@
                         @Model.Leiras
                     </div>
                 </div>
-                </div>
+                <span>@Html.ActionLink("Edit", "Edit", "MyWork", new { id = Model.Id }, new { @class = "btn btn-dark" })</span>
+                <span onclick="return confirm('Are you sure you want to delete this project?')">@Html.ActionLink("Delete", "Delete", "MyWork", new { id = Model.Id }, new { @class = "btn btn-danger" })</span>
+
             </div>
-
-
-
+            </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
-
-
-
 @if (Model.eleresiUt.Contains(".png"))
 {
     var file = System.Drawing.Image.FromFile(@"D:\Szakdolgozat/Portfolio_Szakdolgozat/Portfolio/Content/Works/" + Model.eleresiUt);
