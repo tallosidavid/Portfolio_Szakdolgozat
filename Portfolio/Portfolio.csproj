@@ -226,6 +226,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Munkaim.cs" />
+    <Compile Include="Models\SumViewModel.cs" />
     <Compile Include="Models\WorkViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -246,7 +247,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Icons\email.png" />
     <Content Include="Content\Icons\survey.png" />
-    <Content Include="Content\video_player.css" />
+    <Content Include="Content\MainPage.css" />
     <Content Include="Content\Works\Abstrakt Cube.mp4" />
     <Content Include="Content\Works\Area Attack.mp4" />
     <Content Include="Content\Works\Camp Fire.mp4" />
