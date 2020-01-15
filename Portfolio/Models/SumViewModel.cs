@@ -7,7 +7,8 @@ namespace Portfolio.Models
 {
     public class SumViewModel
     {
-        public virtual IEnumerable<Feedback> Feedbacks { get; set; }
-        public virtual IEnumerable<Munkaim> Munkaims { get; set; }
+        public List<Feedback> Feedbacks { get; set; }
+        public List<Munkaim> Munkaims { get; set; }
+        public List<Experience> Experiences { get; set; }
     }
 }

@@ -172,6 +172,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\EmailController.cs" />
+    <Compile Include="Controllers\ExperienceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManageEmailsController.cs" />
@@ -220,11 +221,21 @@
     <Compile Include="Migrations\202001141658387_SlideShowOption.Designer.cs">
       <DependentUpon>202001141658387_SlideShowOption.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001151332000_createExperience.cs" />
+    <Compile Include="Migrations\202001151332000_createExperience.Designer.cs">
+      <DependentUpon>202001151332000_createExperience.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001151332496_popExperience.cs" />
+    <Compile Include="Migrations\202001151332496_popExperience.Designer.cs">
+      <DependentUpon>202001151332496_popExperience.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Email.cs" />
     <Compile Include="Models\EmailViewModel.cs" />
+    <Compile Include="Models\Experience.cs" />
+    <Compile Include="Models\ExperienceViewModel.cs" />
     <Compile Include="Models\Feedback.cs" />
     <Compile Include="Models\FeedbackViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -237,10 +248,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Icons\Arthungry_Logo.png" />
+    <Content Include="Content\Icons\Arthungry_Logo_Zold.png" />
     <Content Include="Content\Icons\Behance_Logo.png" />
+    <Content Include="Content\Icons\Behance_Logo_Zold.png" />
     <Content Include="Content\Icons\GitHub_Logo.png" />
+    <Content Include="Content\Icons\GitHub_Logo_Zold.png" />
     <Content Include="Content\Icons\Gmail_Logo.png" />
+    <Content Include="Content\Icons\Gmail_Logo_Zold.png" />
     <Content Include="Content\Icons\LinkedIn_Logo.png" />
+    <Content Include="Content\Icons\LinkedIn_Logo_Zold.png" />
     <Content Include="Content\Icons\Phone_Logo.png" />
     <Content Include="Content\image_card.css" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -442,6 +458,9 @@
     <Content Include="Views\ManageEmails\_ManageEmails.cshtml" />
     <Content Include="Views\SeenEmail\_SeenEmails.cshtml" />
     <Content Include="Views\SeenEmail\Index.cshtml" />
+    <Content Include="Views\Experience\New.cshtml" />
+    <Content Include="Views\Experience\Index.cshtml" />
+    <Content Include="Views\Experience\_Experience.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -484,6 +503,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001141658387_SlideShowOption.resx">
       <DependentUpon>202001141658387_SlideShowOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001151332000_createExperience.resx">
+      <DependentUpon>202001151332000_createExperience.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001151332496_popExperience.resx">
+      <DependentUpon>202001151332496_popExperience.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

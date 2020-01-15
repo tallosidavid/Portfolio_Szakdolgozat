@@ -20,6 +20,7 @@ namespace Portfolio.Controllers
 
             var feedback = _context.Feedback.ToList();
             var work = _context.Munkaim.ToList();
+            var experience = _context.Experience.ToList();
 
 
 
@@ -27,6 +28,7 @@ namespace Portfolio.Controllers
             SumViewModel model = new SumViewModel();
             model.Feedbacks = feedback;
             model.Munkaims = work;
+            model.Experiences = experience;
             return View(model);
         }
     }
