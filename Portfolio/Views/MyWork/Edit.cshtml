@@ -4,48 +4,49 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit Project</h2>
-<br />
+<div class="row h-100 justify-content-md-center">
+    <div class="col-md-6">
+        <div class="card" style="height:auto;margin-top:20px;">
+            <h5 class="card-header contact-header text-center py-4">
+                <strong>Edit Project!</strong>
+            </h5>
+            <div class="card-body">
+                @using (Html.BeginForm("Save", "MyWork", FormMethod.Post))
+                {
 
 
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Munkaim.Cim)
+                        @Html.TextBoxFor(m => m.Munkaim.Cim, new { @class = "form-control",@style="width:100%;"  })
+                        @Html.ValidationMessageFor(m => m.Munkaim.Cim)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Munkaim.Leiras)
+                        @Html.TextAreaFor(m => m.Munkaim.Leiras, new { @class = "form-control", @rows = "5",@style="width:100%;"  })
+                        @Html.ValidationMessageFor(m => m.Munkaim.Leiras)
+                    </div>
+                    <div class="form-group form-check">
+                        @Html.CheckBoxFor(m => m.Munkaim.Csillagozott, new { @class = "form-check-input" })
+                        @Html.LabelFor(m => m.Munkaim.Csillagozott, new { @class = "form-check-label" })
+                    </div>
+                    <div class="form-group form-check">
+                        @Html.CheckBoxFor(m => m.Munkaim.SlideShow, new { @class = "form-check-input" })
+                        @Html.LabelFor(m => m.Munkaim.SlideShow, new { @class = "form-check-label" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Munkaim.HozzaadasDatuma)
+                        @Html.TextBoxFor(m => m.Munkaim.HozzaadasDatuma, "{0:yyyy-MM-dd}", new { @class = "form-control",@style="width:100%;"  })
+                        @Html.ValidationMessageFor(m => m.Munkaim.HozzaadasDatuma)
+                    </div>
+                    @Html.HiddenFor(m => m.Munkaim.Id)
+                    @Html.AntiForgeryToken()
+            <button type="submit" class="btn_contact" style="display:block;"><span>Save!</span></button>
+                }
 
-@using (Html.BeginForm("Save", "MyWork", FormMethod.Post))
-{
-
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.Munkaim.Cim)
-        @Html.TextBoxFor(m => m.Munkaim.Cim, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Munkaim.Cim)
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Munkaim.Leiras)
-        @Html.TextAreaFor(m => m.Munkaim.Leiras, new { @class = "form-control", @rows = "5" })
-        @Html.ValidationMessageFor(m => m.Munkaim.Leiras)
-    </div>
-    <div class="form-group form-check">
-        @Html.CheckBoxFor(m => m.Munkaim.Csillagozott, new { @class = "form-check-input" })
-        @Html.LabelFor(m => m.Munkaim.Csillagozott, new { @class = "form-check-label" })
-    </div>
-    <div class="form-group form-check">
-        @Html.CheckBoxFor(m => m.Munkaim.SlideShow, new { @class = "form-check-input" })
-        @Html.LabelFor(m => m.Munkaim.SlideShow, new { @class = "form-check-label" })
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Munkaim.HozzaadasDatuma)
-        @Html.TextBoxFor(m => m.Munkaim.HozzaadasDatuma, "{0:yyyy-MM-dd}", new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Munkaim.HozzaadasDatuma)
-    </div>
-
-
-
-
-    @Html.HiddenFor(m => m.Munkaim.Id)
-    @Html.AntiForgeryToken()
-    <button type="submit" class="btn btn-primary">Save</button>
-}
-
-
+</div>
 @section scripts
 {
     @Scripts.Render("~/bundles/jqueryval")

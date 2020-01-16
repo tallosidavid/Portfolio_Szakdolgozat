@@ -4,36 +4,45 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>New Experience</h2>
+<div class="row h-100 justify-content-md-center">
+    <div class="col-md-12">
+        <div class="card" style="margin-bottom:0px;height:auto;margin-top:20px;">
+            <div class="card-header contact-header text-center py-4">
+                <strong>Ask a question!</strong>
+            </div>
+            <div class="card-body">
+                @using (Html.BeginForm("Save", "Experience", FormMethod.Post))
+                {
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Experience.Hol)
+                        @Html.TextBoxFor(m => m.Experience.Hol, new { @class = "form-control", @style = "width:100%;" })
+                        @Html.ValidationMessageFor(m => m.Experience.Hol)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Experience.Mit)
+                        @Html.TextAreaFor(m => m.Experience.Mit, new { @class = "form-control", @rows = "5", @style = "width:100%;" })
+                        @Html.ValidationMessageFor(m => m.Experience.Mit)
+                    </div>
+                    <div class="form-group form-check">
+                        @Html.CheckBoxFor(m => m.Experience.Aktiv, new { @class = "form-check-input" })
+                        @Html.LabelFor(m => m.Experience.Aktiv, new { @class = "form-check-label" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Experience.Mettol)
+                        @Html.TextBoxFor(m => m.Experience.Mettol, "{0:yyyy-MM-dd}", new { @class = "form-control", @style = "width:100%;" })
+                        @Html.ValidationMessageFor(m => m.Experience.Mettol)
+                    </div>
 
-@using (Html.BeginForm("Save", "Experience", FormMethod.Post))
-{
-    <div class="form-group">
-        @Html.LabelFor(m => m.Experience.Hol)
-        @Html.TextBoxFor(m => m.Experience.Hol, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Experience.Hol)
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Experience.Mit)
-        @Html.TextAreaFor(m => m.Experience.Mit, new { @class = "form-control", @rows = "5" })
-        @Html.ValidationMessageFor(m => m.Experience.Mit)
-    </div>
-    <div class="form-group form-check">
-        @Html.CheckBoxFor(m => m.Experience.Aktiv, new { @class = "form-check-input" })
-        @Html.LabelFor(m => m.Experience.Aktiv, new { @class = "form-check-label" })
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Experience.Mettol)
-        @Html.TextBoxFor(m => m.Experience.Mettol, "{0:yyyy-MM-dd}", new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Experience.Mettol)
-    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Experience.Meddig)
+                        @Html.TextBoxFor(m => m.Experience.Meddig, "{0:yyyy-MM-dd}", new { @class = "form-control", @style = "width:100%;" })
+                    </div>
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.Experience.Meddig)
-        @Html.TextBoxFor(m => m.Experience.Meddig, "{0:yyyy-MM-dd}", new { @class = "form-control" }) 
+                    @Html.HiddenFor(m => m.Experience.Id)
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn_contact" style="display:block;"><span>Send!</span></button>
+                }
+            </div>
+        </div>
     </div>
-
-    @Html.HiddenFor(m => m.Experience.Id)
-    @Html.AntiForgeryToken()
-    <button type="submit" class="btn btn-primary">Send</button>
-}
+</div>

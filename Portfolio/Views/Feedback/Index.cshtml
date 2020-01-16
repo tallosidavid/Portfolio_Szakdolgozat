@@ -4,16 +4,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 class="text-center">Feedbacks about my works</h2> 
-<a href="Feedback/New" class="btn_contact" style="width:50%"><span>Rate my work!</span></a>
-<div class="container-fluid">
-    <div class="row">
+<h2 class="text-center">Feedbacks about my works</h2>
+<div class="row  h-100 justify-content-center align-items-center">
+    <a href="Feedback/New" class="btn_contact" style="width:50%"><span>Rate my work!</span></a>
+    </div>
+    <div class="row h-100">
         @foreach (var f in Model)
         {
             @Html.Partial("_Feedback", f)
         }
 
     </div>
-</div>
- 
- 
+

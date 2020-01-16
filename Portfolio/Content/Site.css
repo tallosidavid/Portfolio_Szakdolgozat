@@ -3,11 +3,11 @@
     padding-left: 15px;
     padding-right: 15px;
 }
- 
+
 .dl-horizontal dt {
     white-space: normal;
 }
- 
+
 input,
 select,
 textarea {
@@ -45,146 +45,13 @@ span.badge-notification {
         top: -11px;
         right: -24px;
     }
-
-.phone {
-    width: 32px;
-    height: 32px;
-    background-color: #327355;
-    -webkit-transition: width .5s, font-size .5s;
-    position: absolute;
-    right: 0;
-    top:32px;
-    font-size: 0%;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
-}
-
-    .phone:hover {
-        width: 180px;
-        font-size: 100%;
-    }
-
-.email {
-    width: 32px;
-    height: 32px;
-    background-color: #D44638;
-    -webkit-transition: width .5s, font-size .5s;
-    position: absolute;
-    right: 0;
-    top: 0px;
-    font-size: 0%;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
-}
-
-    .email:hover {
-        width: 250px;
-        font-size: 100%;
-    }
-
-.linkedin {
-    width: 32px;
-    height: 32px;
-    background-color: #2867b2;
-    -webkit-transition: width .5s, font-size .5s;
-    position: absolute;
-    right: 0;
-    top: 64px;
-    font-size: 0%;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
-}
-
-    .linkedin:hover {
-        width: 130px;
-        font-size: 100%;
-    }
-
-.behance {
-    width: 32px;
-    height: 32px;
-    background-color: #1769ff;
-    -webkit-transition: width .5s, font-size .5s;
-    position: absolute;
-    right: 0;
-    top: 96px;
-    font-size: 0%;
-    border-bottom-left-radius: 20px;
-    border-top-left-radius: 20px;
-}
-
-    .behance:hover {
-        width: 130px;
-        font-size: 100%;
-    }
-
-.github {
-    width: 32px;
-    height: 32px;
-    background-color: #211f1f;
-    -webkit-transition: width .5s, font-size .5s;
-    position: absolute;
-    right: 0;
-    top: 128px;
-    font-size: 0%;
-    border-bottom-left-radius: 20px;
-    border-top-left-radius: 20px;
-}
-
-    .github:hover {
-        width: 130px;
-        font-size: 100%;
-    }
-
-.arthungry {
-    width: 32px;
-    height: 32px;
-    background-color: #D1D1D1;
-    -webkit-transition: width .5s, font-size .5s;
-    position: absolute;
-    right: 0;
-    top: 160px;
-    font-size: 0%;
-    border-bottom-left-radius: 20px;
-    border-top-left-radius: 20px;
-}
-
-    .arthungry:hover {
-        width: 130px;
-        font-size: 100%;
-    }
-
-.arthungryLink {
-    color: black;
-}
-
-
-.behanceLink {
-    color: black;
-}
-
-
-.phoneLink {
-    color: black;
-}
-
-
-.emailLink {
-    color: black;
-}
-
-
-.linkedinLink {
-    color: black;
-}
-.githubLink{
-    color:white;
-}
+ 
 .contact-header {
-    background: linear-gradient(to right, #0ABF04, #0BD904);
+    background: linear-gradient(to right, #43ff6f, #22cc4a);
 }
+
 .btn_contact {
-    width:100%;
+    width: 100%; 
     border: none;
     display: block;
     text-align: center;
@@ -197,8 +64,7 @@ span.badge-notification {
     font-weight: 700;
     font-size: 15px;
     background-color: #222;
-    padding: 17px 60px;
-    margin: 0 auto;
+    padding: 17px 60px; 
     box-shadow: 0 5px 15px rgba(0,0,0,0.20);
 }
 
@@ -214,7 +80,7 @@ span.badge-notification {
         top: 0;
         height: 800%;
         width: 200%;
-        background: #0BD904;
+        background: linear-gradient(to right, #43ff6f, #22cc4a);
         -webkit-transition: all .5s ease-in-out;
         transition: all .5s ease-in-out;
         -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
@@ -226,10 +92,11 @@ span.badge-notification {
         transform: translateX(-9%) translateY(-25%) rotate(45deg);
     }
 
-.field-validation-error{
-    color:red;
-    font-weight:bold;
+.field-validation-error {
+    color: red;
+    font-weight: bold;
 }
+
 .card_video {
     margin: auto;
     margin-bottom: 20px;
@@ -247,3 +114,59 @@ span.badge-notification {
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
 }
+
+.underline {
+    color: black;
+    display: inline-block;
+    position: relative;
+}
+
+    .underline:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: #22cc4a;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+    }
+
+    .underline:hover:after {
+        width: 100%;
+        left: 0;
+    }
+
+.Opened {
+    color: #22cc4a;
+}
+
+.toggle {
+    color: black;
+}
+
+    .toggle:hover {
+        color: #169c36;
+    }
+
+.iImg {
+    margin-left:10px;
+    width :54px;
+}
+.iImg:hover{
+    width: 60px;
+}
+.contactSocial { 
+    top: 0; 
+}
+.login {
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    background-color: #3a3a3a;
+    margin: auto;
+    padding: 17px 60px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.20);
+} 

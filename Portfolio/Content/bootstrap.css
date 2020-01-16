@@ -2062,11 +2062,11 @@ pre code {
 }
 
 .form-control:focus {
-  color: #495057;
-  background-color: #fff;
-  border-color: #80bdff;
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem #43ff6f;
 }
 
 .form-control::-webkit-input-placeholder {
@@ -4637,12 +4637,12 @@ input[type="button"].btn-block {
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: rgba(0, 0, 0, 0.5);
+  /*color: rgba(0, 0, 0, 0.5);*/
 }
 
-.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
-  color: rgba(0, 0, 0, 0.7);
-}
+    .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+        color: #169c36;
+    }
 
 .navbar-light .navbar-nav .nav-link.disabled {
   color: rgba(0, 0, 0, 0.3);
@@ -4725,10 +4725,11 @@ input[type="button"].btn-block {
 }
 
 .card {
-    margin:auto;
-    margin-bottom:20px;
-    width:500px;
-    height:500px;
+    margin: auto;
+    margin-bottom: 20px;
+    max-width: 500px;
+    width: auto;
+    height: 500px;
     position: relative;
     display: -ms-flexbox;
     display: flex;

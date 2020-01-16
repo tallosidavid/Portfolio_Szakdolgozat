@@ -18,9 +18,9 @@
             </li>
         }
             <li>
-                @Html.ActionLink($"Hi Admin!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link" })
+                @Html.ActionLink($"Hi Admin!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link underline" })
             </li>
-            <li><a class="nav-link" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+            <li><a class="nav-link underline" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
         </ul>
     }
 }
@@ -28,7 +28,7 @@ else
 {
     <ul class="nav navbar-nav navbar-right">
         @*<li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>*@
-        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink",@class="nav-link" })</li>
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink",@class="nav-link underline" })</li>
     </ul>
 }
 

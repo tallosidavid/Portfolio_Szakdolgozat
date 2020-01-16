@@ -3,73 +3,61 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="container-fluid">
-    <div class="row" style="margin-bottom:20px;">
-        <div class="col-md-12">
-            <h1 class="text-center">Feel free to contact Me!</h1>
-            <p class="text-center">Ide kell valami töltelék szöveg még hogy milyen királyvagyok hogy ennyi köcsög platformon eléhető vagyok</p>
+<div class="row" style="margin-bottom:20px;">
+    <div class="col-md-12">
+        <h1 class="text-center">Feel free to contact Me!</h1>
+        <p class="text-center">You can also contact me on multiple social network!</p>
+    </div>
+</div>
+<div class="row h-100 justify-content-md-center">
+    <div class="col-md-12">
+        <div class="card" style="margin-bottom:0px;height:auto;">
+            <h5 class="card-header contact-header text-center py-4">
+                <strong>Ask a question!</strong>
+            </h5>
+            <div class="card-body">
+                @using (Html.BeginForm("Save", "Email", FormMethod.Post))
+                {
+                    <div class="form-row">
+                        <div class="col-5">
+                            @Html.LabelFor(m => m.Email.Felado)
+                            @Html.TextBoxFor(m => m.Email.Felado, new { @class = "form-control", @style = "width:100%;", @required = "True" })
+                            @Html.ValidationMessageFor(m => m.Email.Felado)
+                        </div>
+                        <div class="col-7">
+                            @Html.LabelFor(m => m.Email.EmailCim)
+                            @Html.TextBoxFor(m => m.Email.EmailCim, new { @class = "form-control", @type = "email", @style = "width:100%;" })
+                            @Html.ValidationMessageFor(m => m.Email.EmailCim)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Email.Uzenet)
+                        @Html.TextAreaFor(m => m.Email.Uzenet, new { @class = "form-control", @rows = "5", @style = "width:100%;" })
+                        @Html.ValidationMessageFor(m => m.Email.Uzenet)
+                    </div>
+                    @Html.HiddenFor(m => m.Email.Id)
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn_contact" style="display:block;"><span>Send!</span></button>
+                }
+            </div>
         </div>
     </div>
-    <div class="row justify-content-md-center">
-        <div class="col-md-auto" style="top:150px;">
-            <div class="phone">
-                <img src="~/Content/Icons/Phone_Logo.png" width="30" />
-                <a class="phoneLink" href="tel:+36-20-372-0903">+36 20 372 0903</a>
-            </div>
-            <div class="email">
-                <img src="~/Content/Icons/Gmail_Logo.png" width="32" style="margin-top:4px;" />
-                <a class="emailLink" href="mailto:tallosi.david69@gmail.com" style="margin-top:4px;">tallosi.david69@gmail.com</a>
-            </div>
-            <div class="linkedin">
-                <img src="~/Content/Icons/LinkedIn_Logo.png" width="32" />
-                <a class="linkedinLink" href="https://www.linkedin.com/in/d%C3%A1vid-tall%C3%B3si-4a86a0168/">LinkedIn</a>
-            </div>
-            <div class="behance">
-                <img src="~/Content/Icons/Behance_Logo.png" width="32" />
-                <a class="behanceLink" href="https://www.behance.net/dvidtallsi">Behance</a>
-            </div>
-            <div class="github">
-                <img src="~/Content/Icons/GitHub_Logo.png" width="32" />
-                <a class="githubLink" href="https://github.com/tallosidavid">GitHub</a>
-            </div>
-            <div class="arthungry">
-                <img src="~/Content/Icons/Arthungry_Logo.png" width="32" />
-                <a class="arthungryLink" href="https://arthungry.com/tallosi.david">Arthungry</a>
-            </div>
-        </div>
-        <div class="col-md-auto">
-            <div class="card" style="right:15px; min-height:450px;">
-                <h5 class="card-header contact-header text-center py-4" style="margin-bottom:10px;">
-                    <strong>Ask a question!</strong>
-                </h5>
-                <div class="card-body px-md-4">
-                    @using (Html.BeginForm("Save", "Email", FormMethod.Post))
-                    {
-                        <div class="form-row">
-                            <div class="col-5">
-                                @Html.LabelFor(m => m.Email.Felado)
-                                @Html.TextBoxFor(m => m.Email.Felado, new { @class = "form-control", @style = "width:100%;",@required="True" })
-                                @Html.ValidationMessageFor(m => m.Email.Felado)
-                            </div>
-                            <div class="col-7">
-                                @Html.LabelFor(m => m.Email.EmailCim)
-                                @Html.TextBoxFor(m => m.Email.EmailCim, new { @class = "form-control", @type = "email", @style = "width:100%;" })
-                                @Html.ValidationMessageFor(m => m.Email.EmailCim)
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.Email.Uzenet)
-                            @Html.TextAreaFor(m => m.Email.Uzenet, new { @class = "form-control", @rows = "5", @style = "width:100%;" })
-                            @Html.ValidationMessageFor(m => m.Email.Uzenet)
-                        </div>
-                        @Html.HiddenFor(m => m.Email.Id)
-                        @Html.AntiForgeryToken()
-                        <button type="submit" class="btn_contact"><span>Send!</span></button>
-                    }
-                </div>
-
-            </div>
-        </div>
+    <div class="row h-100 justify-content-center align-content-center contactSocial" style="background-color:#43ff6f;width:500px;">
+        <a href="https://arthungry.com/tallosi.david" target="_blank">
+            <img class="iImg" src="~/Content/Icons/Arthungry_Logo_Zold.png" />
+        </a>
+        <a href="https://www.behance.net/dvidtallsi" target="_blank">
+            <img class="iImg" src="~/Content/Icons/Behance_Logo_Zold.png" />
+        </a>
+        <a href="https://github.com/tallosidavid" target="_blank">
+            <img class="iImg" src="~/Content/Icons/GitHub_Logo_Zold.png" />
+        </a>
+        <a href="mailto:tallosi.david69@gmail.com" target="_blank">
+            <img class="iImg" src="~/Content/Icons/Gmail_Logo_Zold.png" style="padding-top:5px;" />
+        </a>
+        <a href="https://www.linkedin.com/in/d%C3%A1vid-tall%C3%B3si-4a86a0168/" target="_blank">
+            <img class="iImg" src="~/Content/Icons/LinkedIn_Logo_Zold.png" />
+        </a>
     </div>
 </div>
 
