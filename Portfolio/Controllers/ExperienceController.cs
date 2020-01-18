@@ -39,6 +39,7 @@ namespace Portfolio.Controllers
                 letezoXP.Mettol = experience.Mettol;
                 letezoXP.Meddig = experience.Meddig; 
             }
+            TempData["success"] = "You successfully uploaded a new job experience!";
             _context.SaveChanges();
             return RedirectToAction("Index");
         }

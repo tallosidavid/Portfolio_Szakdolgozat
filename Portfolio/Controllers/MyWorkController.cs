@@ -30,7 +30,7 @@ namespace Portfolio.Controllers
                 {
                     Munkaim = munkaim
                 };
-
+                TempData["error"] = "Something went wrong! Please try again later!";
                 return View("Edit", vm);
             }
 
@@ -47,6 +47,7 @@ namespace Portfolio.Controllers
                 letezoMunka.SlideShow = munkaim.SlideShow;
                 letezoMunka.Leiras = munkaim.Leiras;
             }
+            TempData["success"] = "You successfully uploaded a new project!";
             _context.SaveChanges();
             return RedirectToAction("Index", "MyWork");
         }
@@ -90,8 +91,13 @@ namespace Portfolio.Controllers
                     };
                     return View("New", vm);
                 }
+                if (munkaim.HozzaadasDatuma == null)
+                {
+                    munkaim.HozzaadasDatuma = DateTime.Now;
+                }
                 _context.Munkaim.Add(munkaim);
                 _context.SaveChanges();
+                TempData["success"] = "You successfully uploaded a new project!";
                 return RedirectToAction("Index", "MyWork");
             }
             return View("Index");

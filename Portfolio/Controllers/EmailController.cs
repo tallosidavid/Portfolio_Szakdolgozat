@@ -25,7 +25,8 @@ namespace Portfolio.Controllers
                 {
                     Email=email
                 };
-                return View("New", vm);
+                ViewBag.Error = string.Format("Something went wrong! Please try again later, or you can find me on multiple links below the 'SEND!' button!");
+                return View("../Contact/Index");
             }
 
             if (email.Id == null || email.Id == 0)
@@ -35,8 +36,10 @@ namespace Portfolio.Controllers
                 _context.Email.Add(email);
 
             }
+            ViewBag.Success = string.Format("Thank you for your time! You successfully sended your question!");
+            
             _context.SaveChanges();
-            return RedirectToAction("Index","Contact");
+            return View("../Contact/Index");
         }
     }
 }

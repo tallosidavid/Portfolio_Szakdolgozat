@@ -7,9 +7,9 @@
 <div class="row h-100 justify-content-md-center">
     <div class="col-md-12">
         <div class="card" style="margin-bottom:0px;height:auto;margin-top:20px;">
-            <div class="card-header contact-header text-center py-4">
+            <h5 class="card-header contact-header text-center py-4">
                 <strong>Ask a question!</strong>
-            </div>
+            </h5>
             <div class="card-body">
                 @using (Html.BeginForm("Save", "Experience", FormMethod.Post))
                 {
@@ -40,7 +40,7 @@
 
                     @Html.HiddenFor(m => m.Experience.Id)
                     @Html.AntiForgeryToken()
-                    <button type="submit" class="btn_contact" style="display:block;"><span>Send!</span></button>
+                    <button type="submit" class="btn_contact" style="display:block;"><span>Save!</span></button>
                 }
             </div>
         </div>

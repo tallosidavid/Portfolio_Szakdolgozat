@@ -6,9 +6,9 @@
 <div class="row h-100 justify-content-md-center">
     <div class="col-md-6">
         <div class="card" style="height:auto;margin-top:20px;">
-            <div class="card-header contact-header text-center py-4">
+            <h5 class="card-header contact-header text-center py-4">
                 <strong>New Work!</strong>
-            </div>
+            </h5>
             <div class="card-body">
                 @using (Html.BeginForm("NewSave", "MyWork", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
@@ -31,10 +31,9 @@
                         @Html.LabelFor(m => m.Munkaim.SlideShow, new { @class = "form-check-label" })
                     </div>
                     <div class="form-group">
-
                         @Html.LabelFor(m => m.Munkaim.HozzaadasDatuma)
-                        @Html.TextBoxFor(m => m.Munkaim.HozzaadasDatuma, "{0:yyyy-MM-dd}", new { @class = "form-control",@style="width:100%;"  })
-                        @Html.ValidationMessageFor(m => m.Munkaim.HozzaadasDatuma)
+                        @Html.LabelFor(m => m.Munkaim.HozzaadasDatuma)
+                        @Html.TextBoxFor(m => m.Munkaim.HozzaadasDatuma, "{0:yyyy-MM-dd}", new { @class = "form-control", @style = "width:100%;" })
                     </div>
                     if (Request.Url.ToString().Contains("/New"))
                     {
@@ -44,7 +43,7 @@
                     }
                     @Html.HiddenFor(m => m.Munkaim.Id)
                     @Html.AntiForgeryToken()
-                    <button type="submit" class="btn_contact" style="display:block;"><span>Save!</span></button>
+                    <button type="submit" class="btn_contact" style="display:block;"><span>Upload!</span></button>
                 }
 
                 <span>@ViewBag.UploadError </span>

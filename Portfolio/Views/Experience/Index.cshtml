@@ -3,18 +3,22 @@
     ViewBag.Title = "Experience";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@if (TempData["success"] != null)
+{<div class='alert alert-success' role='alert' style="margin-top:20px;">
+        @TempData["success"]
+    </div>
+}
 <h2 class="text-center">Feedbacks about my works</h2>
 <div class="row justify-content-center align-items-center">
     <a href="Experience/New" class="btn_contact" style="width:50%"><span>New Experience!</span></a>
 </div>
-    <div class="row">
-        @foreach (var f in Model)
-        {
-            @Html.Partial("_Experience", f)
-        }
+<div class="row">
+    @foreach (var f in Model)
+    {
+        @Html.Partial("_Experience", f)
+    }
 
-    </div>
-  
+</div>
+
 
 

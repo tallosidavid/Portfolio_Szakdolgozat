@@ -18,8 +18,9 @@ namespace Portfolio.Models
         [Display(Name = "Description")]
         public string Leiras { get; set; }
         [Display(Name = "Date")]
+        [Required(ErrorMessage = "You must give a date for your project")]
         public DateTime HozzaadasDatuma { get; set; }
-        [Display(Name = "Show Index page")]
+        [Display(Name = "Show on Index page")]
         public bool SlideShow { get; set; }
         public string eleresiUt { get; set; }
         

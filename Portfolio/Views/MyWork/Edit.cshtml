@@ -3,7 +3,11 @@
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@if (TempData["error"] != null)
+{<div class='alert alert-danger' role='alert' style="margin-top:20px;">
+        @TempData["error"]
+    </div>
+}
 <div class="row h-100 justify-content-md-center">
     <div class="col-md-6">
         <div class="card" style="height:auto;margin-top:20px;">
@@ -17,12 +21,12 @@
 
                     <div class="form-group">
                         @Html.LabelFor(m => m.Munkaim.Cim)
-                        @Html.TextBoxFor(m => m.Munkaim.Cim, new { @class = "form-control",@style="width:100%;"  })
+                        @Html.TextBoxFor(m => m.Munkaim.Cim, new { @class = "form-control", @style = "width:100%;" })
                         @Html.ValidationMessageFor(m => m.Munkaim.Cim)
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(m => m.Munkaim.Leiras)
-                        @Html.TextAreaFor(m => m.Munkaim.Leiras, new { @class = "form-control", @rows = "5",@style="width:100%;"  })
+                        @Html.TextAreaFor(m => m.Munkaim.Leiras, new { @class = "form-control", @rows = "5", @style = "width:100%;" })
                         @Html.ValidationMessageFor(m => m.Munkaim.Leiras)
                     </div>
                     <div class="form-group form-check">
@@ -35,12 +39,12 @@
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(m => m.Munkaim.HozzaadasDatuma)
-                        @Html.TextBoxFor(m => m.Munkaim.HozzaadasDatuma, "{0:yyyy-MM-dd}", new { @class = "form-control",@style="width:100%;"  })
+                        @Html.TextBoxFor(m => m.Munkaim.HozzaadasDatuma, "{0:yyyy-MM-dd}", new { @class = "form-control", @style = "width:100%;" })
                         @Html.ValidationMessageFor(m => m.Munkaim.HozzaadasDatuma)
                     </div>
                     @Html.HiddenFor(m => m.Munkaim.Id)
                     @Html.AntiForgeryToken()
-            <button type="submit" class="btn_contact" style="display:block;"><span>Save!</span></button>
+                    <button type="submit" class="btn_contact" style="display:block;"><span>Save!</span></button>
                 }
 
             </div>

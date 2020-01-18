@@ -33,6 +33,7 @@ namespace Portfolio.Controllers
                 var vm = new FeedbackViewModel {
                     Feedback = feedback
                 };
+                TempData["error"] = "Something went wrong! Please try again later!";
                 return View("New", vm);
             }
 
@@ -45,9 +46,9 @@ namespace Portfolio.Controllers
                _context.Feedback.Add(feedback);
                 
             }
-
+            TempData["success"]="Thank you for your time! You successfully sended your question!";
             _context.SaveChanges();
-            return RedirectToAction("Index", "Feedback");
+            return RedirectToAction("../Feedback/Index");
         }
 
         public ActionResult Delete(int id)

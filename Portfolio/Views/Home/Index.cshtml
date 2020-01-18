@@ -5,8 +5,6 @@
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <link type="text/css" rel="stylesheet" href="~/Content/MainPage.css" />
 <div class="col-md-12">
-
-
     @* Intro *@
     <div class="card" style="margin:auto;margin-top:20px; width:65%; height:auto;max-width:5000px;">
         <div class="card-body">
@@ -46,8 +44,6 @@
             </div>
         </div>
     </div>
-
-
     @* VID SLIDE SHOW *@
     <div class="row justify-content-center align-items-center">
         <div id="video-carousel-main" class="carousel slide carousel-fade" data-interval="false" data-ride="carousel" style="max-width:65%;">
@@ -90,19 +86,8 @@
             </div>
         </div>
     </div>
-    <script>
+    <script> 
         function Mainvideoplayer() {
-            //  var tomb = [0, 1, 2];
-            //var active = "active";
-            //tomb.forEach(function (s, index, tomb) {
-            //    var ElsoOsztaly = document.getElementsByName(s)[0].getAttribute("class");
-            //    if (ElsoOsztaly.includes(active)) {
-            //        document.getElementById(s).play();
-            //    }
-            //    else {
-            //        document.getElementById(s).pause();
-            //    }
-            //});
             var active = "active";
             var ElsoOsztaly = document.getElementsByName("0")[0].getAttribute("class");
             if (ElsoOsztaly.includes(active)) {
@@ -172,7 +157,6 @@
             </a>
         </div>
     </div>
-
     @* Timeline *@
     <h1 class="text-center">Education</h1>
     <section class="timeline">
@@ -263,7 +247,6 @@
             });
         });
     </script>
-
     @* Experience *@
     <div class="row h-100 justify-content-center align-items-center">
         <div id="carouselControlsXp" class="carousel slide" data-ride="carousel" style="margin:auto;margin-top:20px; width:1000px;">

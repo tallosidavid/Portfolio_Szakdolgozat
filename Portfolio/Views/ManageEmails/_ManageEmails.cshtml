@@ -4,9 +4,9 @@
 @if (!Model.Lattamozott)
 {<div class="col-md-auto">
     <div class="card" style="height:auto;margin-top:20px;">
-        <div class="card-header" style="font-weight:bold;font-style:italic;background: linear-gradient(to right, #43ff6f, #22cc4a);">
-            @Model.Felado-(@Model.EmailCim)
-        </div>
+        <h5 class="card-header" style="font-weight:bold;font-style:italic;background: linear-gradient(to right, #43ff6f, #22cc4a);">
+            @Model.Felado-(<a href='mailto:@Model.EmailCim' >@Model.EmailCim</a>)
+        </h5>
         <div class="card-body">
             <blockquote class="blockquote mb-0">
                 <p>@Model.Uzenet</p>
