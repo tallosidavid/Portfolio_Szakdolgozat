@@ -1,9 +1,4 @@
-﻿
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
+﻿ 
 .dl-horizontal dt {
     white-space: normal;
 }
@@ -169,4 +164,7 @@ span.badge-notification {
     margin: auto;
     padding: 17px 60px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.20);
+}
+* {
+    font-family: 'Advent Pro';
 }
