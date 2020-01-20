@@ -3,15 +3,14 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@if (ViewBag.Success != null)
-{
-    <div class='alert alert-success' style="margin-top:20px;" role='alert'>
-        @ViewBag.Success
+@if (TempData["success"] != null)
+{<div class='alert alert-success' role='alert' style="margin-top:20px;">
+        @TempData["success"]
     </div>
 }
-@if (ViewBag.Error != null)
+@if (TempData["error"] != null)
 {<div class='alert alert-danger' role='alert' style="margin-top:20px;">
-        @ViewBag.Error
+        @TempData["error"]
     </div>
 }
 

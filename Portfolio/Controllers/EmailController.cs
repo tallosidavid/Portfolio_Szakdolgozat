@@ -25,8 +25,8 @@ namespace Portfolio.Controllers
                 {
                     Email=email
                 };
-                ViewBag.Error = string.Format("Something went wrong! Please try again later, or you can find me on multiple links below the 'SEND!' button!");
-                return View("../Contact/Index");
+                TempData["error"] = "Something went wrong! Please try again later, or you can find me on multiple links below the 'SEND!' button!";
+                return RedirectToAction("Index", "Contact");
             }
 
             if (email.Id == null || email.Id == 0)
@@ -36,10 +36,10 @@ namespace Portfolio.Controllers
                 _context.Email.Add(email);
 
             }
-            ViewBag.Success = string.Format("Thank you for your time! You successfully sended your question!");
+            TempData["success"] = "Thank you for your time! You successfully sended your question!";
             
             _context.SaveChanges();
-            return View("../Contact/Index");
+            return RedirectToAction("Index","Contact");
         }
     }
 }

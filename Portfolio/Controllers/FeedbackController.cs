@@ -46,9 +46,9 @@ namespace Portfolio.Controllers
                _context.Feedback.Add(feedback);
                 
             }
-            TempData["success"]="Thank you for your time! You successfully sended your question!";
+            TempData["success"]="Thank you for your time! You successfully sended your rating about me!";
             _context.SaveChanges();
-            return RedirectToAction("../Feedback/Index");
+            return RedirectToAction("Index","Feedback");
         }
 
         public ActionResult Delete(int id)
