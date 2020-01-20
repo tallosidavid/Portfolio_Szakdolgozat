@@ -86,30 +86,20 @@
             </div>
         </div>
     </div>
-    <script> 
+    <script>
         function Mainvideoplayer() {
-            var active = "active";
-            var ElsoOsztaly = document.getElementsByName("0")[0].getAttribute("class");
-            if (ElsoOsztaly.includes(active)) {
-                document.getElementById("0").play();
-            }
-            else {
-                document.getElementById("0").pause();
-            }
-            var MasodikOsztaly = document.getElementsByName("1")[0].getAttribute("class");
-            if (MasodikOsztaly.includes(active)) {
-                document.getElementById("1").play();
-            }
-            else {
-                document.getElementById("1").pause();
-            }
-            var HarmadikOsztaly = document.getElementsByName("2")[0].getAttribute("class");
-            if (HarmadikOsztaly.includes(active)) {
-                document.getElementById("2").play();
-            }
-            else {
-                document.getElementById("2").pause();
-            }
+            var play = [0, 1, 2];
+            play.forEach(function (element) {
+                var active = "active";
+                var ElsoOsztaly = document.getElementsByName(element)[0].getAttribute("class");
+                if (ElsoOsztaly.includes(active)) {
+                    document.getElementById(element).play();
+                }
+                else {
+                    document.getElementById(element).pause();
+                    document.getElementById(element).currentTime=0;
+                }
+            })
         }
         $(document).ready(function () {
             $('.carousel').carousel('pause');

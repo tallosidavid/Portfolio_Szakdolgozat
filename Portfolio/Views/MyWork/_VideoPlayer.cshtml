@@ -108,7 +108,6 @@
                 </div>
             </div>
         </div>
-
     }
     else
     {
@@ -138,85 +137,3 @@
         </div>
     }
 }
-
-
-
-@*@if (Model.Csillagozott)
-        {
-    <div class="col-md-12">
-        <div class="card" style="width:auto; height:auto">
-            @if (Model.eleresiUt.Contains(".mp4"))
-            {
-                <video id="videoplayer" style="width:auto" controls autoplay muted loop>
-                    <source src="@Url.Content($"~/Content/Works/{Model.eleresiUt}")" alt="@Model.Cim" type="video/mp4" />
-                </video>
-            }
-            <div class="card-body">
-                <h5 class="card-title" style="font-weight:bold;">@Model.Cim</h5>
-                <p class="card-text">@Model.Leiras</p>
-                <br />
-            </div>
-            <div class="card-footer">
-                <p class="card-text" style="float:right;display:block">Released: @Model.HozzaadasDatuma.ToShortDateString()</p>
-                @if (User.IsInRole("Admin"))
-                {
-                    <span>@Html.ActionLink("Edit", "Edit", "MyWork", new { id = Model.Id }, new { @class = "btn btn-dark" })</span>
-                    <span onclick="return confirm('Are you sure you want to delete this project?')">@Html.ActionLink("Delete", "Delete", "MyWork", new { id = Model.Id }, new { @class = "btn btn-danger" })</span>
-                }
-            </div>
-        </div>
-    </div>
-        }
-        else
-        {
-    <div class="card">
-        @if (Model.eleresiUt.Contains(".mp4"))
-        {
-            <video id="videoplayer" height="300" controls muted>
-                <source src="@Url.Content($"~/Content/Works/{Model.eleresiUt}")" alt="@Model.Cim" type="video/mp4" />
-            </video>
-        }
-        else
-        {
-            <img class="card-img-top" id="myImg_@Model.Id" src="@Url.Content($"~/Content/Works/{Model.eleresiUt}")" alt="@Model.Cim" style="width:100%;max-width: 498px; max-height:280px; ">
-            The Modal
-           <div id= "myModal_@Model.Id" class="modal">
-                <span class="close _@Model.Id" id="close">&times;</span>
-    <img class="modal-content" id="img_@Model.Id">
-    <div id="caption_@Model.Id"></div>
-
-    </div>
-                }
-        <div class="card-body">
-            <h5 class="card-title" style="font-weight:bold;">@Model.Cim</h5>
-            <p class="card-text">@Model.Leiras</p>
-            <br />
-        </div>
-        <div class="card-footer">
-            <p class="card-text" style="float:right;display:block">Released: @Model.HozzaadasDatuma.ToShortDateString()</p>
-            @if (User.IsInRole("Admin"))
-                            {
-            <span>@Html.ActionLink("Edit", "Edit", "MyWork", new { id = Model.Id
-    }, new { @class = "btn btn-dark" })</span>
-            <span onclick="return confirm('Are you sure you want to delete this project?')">@Html.ActionLink("Delete", "Delete", "MyWork", new { id = Model.Id }, new { @class = "btn btn-danger" })</span>
-                            }
-        </div>
-        </div>
-
-        <script>
-                    var modal = document.getElementById("myModal_@Model.Id");
-                    var img = document.getElementById("myImg_@Model.Id");
-                    var modalImg = document.getElementById("img_@Model.Id");
-                    var captionText = document.getElementById("caption_@Model.Id");
-                    img.onclick = function () {
-                        modal.style.display = "block";
-                        modalImg.src = this.src;
-                        captionText.innerHTML = this.alt;
-                    }
-                    var span = document.getElementsByClassName("close _@Model.Id")[0];
-                    span.onclick = function () {
-                        modal.style.display = "none";
-                    }
-        </script>
-        }*@
-
