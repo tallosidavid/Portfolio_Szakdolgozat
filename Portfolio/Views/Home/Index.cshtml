@@ -92,9 +92,7 @@
             play.forEach(function (element) {
                 var active = "active";
                 var ElsoOsztaly = document.getElementsByName(element)[0].getAttribute("class");
-                if (ElsoOsztaly.includes(active)) {
-                    document.getElementById(element).play();
-                }
+                if (ElsoOsztaly.includes(active)) {document.getElementById(element).play();}
                 else {
                     document.getElementById(element).pause();
                     document.getElementById(element).currentTime=0;
@@ -211,26 +209,17 @@
         </ul>
     </section>
     <script>
-        /* Check the location of each element */
         $('.content').each(function (i) {
-
             var bottom_of_object = $(this).offset().top + $(this).outerHeight();
             var bottom_of_window = $(window).height();
-
             if (bottom_of_object > bottom_of_window) {
                 $(this).addClass('hidden');
             }
         });
-
-
         $(window).scroll(function () {
-            /* Check the location of each element hidden */
             $('.hidden').each(function (i) {
-
                 var bottom_of_object = $(this).offset().top + $(this).outerHeight();
                 var bottom_of_window = $(window).scrollTop() + $(window).height();
-
-                /* If the object is completely visible in the window, fadeIn it */
                 if (bottom_of_window > bottom_of_object) {
                     $(this).animate({ 'opacity': '1' }, 700);
                 }
